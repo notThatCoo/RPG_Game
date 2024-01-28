@@ -16,14 +16,10 @@
 > * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group. You will need to hold two to three scrum/check-in meetings with your lab TA/reader at different times in addition to the final demo.
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include:
- > * Why is it important or interesting to you?
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- > * What will be the input/output of your project?
- > * What are the features that the project provides?
- > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
- > 
- > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
+ > * Games have always been a passion of mine.  I've also played my fair share of RPGs, and creating one seems like a very fun project.
+ > * We plan to use C++.
+ > * The first instance of input and output is the character creation.  There will be two options when creating a character: Race and Class.  Each option has four suboptions (16 total combinations).  Both race and class have different benefits depending on the desired play style (for example, being a tank or swift damage dealer).  Initially, the user will be shown the four races and be prompted to choose one.  After they choose one, they will be prompted to choose a class.  Once they do both, the first stage is open.  Next comes the actual gameplay.  Our RPG will have turn-based gameplay and level progression.  During combat, the user will be prompted to perform one of many actions, such as attack, flee, heal, and check inventory.  There will be a grace period between every level where one can heal, look at their inventory, and "prepare" for the next level.  Also, after every level, the user will be given a random weapon or armor that improves their stats and one stat allocation point.  Said random weapon/armor will have increased benefits as one progresses through the game.  For non-stale gameplay, as well as adding an element of luck and strategy, attacks will damage in a set range.  Stats, weapons, and even armor can increase the maximum and/or minimum damage possible.  There won't be an ending to our game.  As you progress through the levels, you and your enemies will both get stronger.  Both strategy and luck will play a big part in progressing.  The goal of the game is to see how far you can get while trying out all the race and class combinations and seeing which one you like more.   
+
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
