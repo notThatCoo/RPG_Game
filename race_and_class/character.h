@@ -9,18 +9,25 @@ enum RaceType {Human, Elf, Dwarf, Dragonborn};
 
 enum ClassType {Knight, Archer, Assassin, Wizard};
 
-double health = 10.0;
-
 class Character {
  protected:
 	RaceType type1;
-
     ClassType type2;
 
+    int raceType;
+    int classType;
 
+    double health;
+    double speed;
+    double dexterity;
+    double strength;
+    double wisdom;
+    double intelligence;
 
  public:
- 	Character(RaceType, ClassType);
+ 	Character(RaceType, ClassType, double, double, double, double, double, double);
+
+    void CreatingCharacter();
  };
 
 #endif
