@@ -47,6 +47,8 @@ takes in character's stats and computes total damage character will inflict when
 	Computes if character successfully flees a fight and flees if yes,
 +checkinventory(): void
 	Outputs the contents of inventory, gives the user an option to equip item, and will change the character stats accordingly to item abilities, 
+ +setLvel(): double
+ 	update character stats with corresponding level, return level
 
  
  > ## Phase III
