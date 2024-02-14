@@ -20,8 +20,6 @@
 ![Cs100 drawio](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/9f5b5f9e-dc9e-4d25-8d5c-3bb0243bf912)
 
 
-in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
-
 Class Diagram Description:
 Character class:
 
