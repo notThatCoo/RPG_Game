@@ -18,6 +18,7 @@
 ## Class Diagram
 ![RPG_Class-Page-2](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/107754577/db3e2106-4d06-4625-836d-604385b9c1be)
  > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+
 Class Diagram Description:
 Character class:
 
