@@ -21,29 +21,29 @@
 > Class Diagram Description:
 Character class:
 +Character(Hero Race, Hero Class, const string &, double ,double,double,double)
-	Creates character 
+	Creates character,
 +HeroRace set stats(string c): void
 Takes in character Hero Race’s and class corresponding stats and computes 
-	Total character stats
+	Total character stats,
 +get stats(): string 
 	Out put character’s name, current stats and level
 +damage(double d):void
-	Compute health after taking damage 
+	Compute health after taking damage, 
 +attack():void
 	character attacks Attack  
 +isAlive(): bool
-	Returnings false if health is less than 1 and true otherwise 
+	Returnings false if health is less than 1 and true otherwise, 
 
 Human/dwarf/Dragonborn/elf Class:
 +attackstrength(double, double, double,double): double
-takes in character's stats and computes total damage character will inflict when attacking
+takes in character's stats and computes total damage character will inflict when attacking,
 +attack(character& ): void
-	Player attacks character passed in 
+	Player attacks character passed in, 
 +flee(): void
 	Character can attempt to flee a fight when it is their turn
-	Computes if character successfully flees a fight and flees if yes
+	Computes if character successfully flees a fight and flees if yes,
 +checkinventory(): void
-	Outputs the contents of inventory, gives the user an option to equip item, and will change the character stats accordingly to item abilities 
+	Outputs the contents of inventory, gives the user an option to equip item, and will change the character stats accordingly to item abilities, 
 
  
  > ## Phase III
