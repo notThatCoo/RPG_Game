@@ -16,8 +16,11 @@
 ![CS100 final project](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/3d156cca-8f1f-4e43-9b68-a78160826cc4)
 
 ## Class Diagram
-![RPG_Class-Page-2](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/107754577/db3e2106-4d06-4625-836d-604385b9c1be)
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+
+![Cs100 drawio](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/9f5b5f9e-dc9e-4d25-8d5c-3bb0243bf912)
+
+
+in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
 
 Class Diagram Description:
 Character class:
@@ -47,7 +50,7 @@ takes in character's stats and computes total damage character will inflict when
 	Computes if character successfully flees a fight and flees if yes,
 +checkinventory(): void
 	Outputs the contents of inventory, gives the user an option to equip item, and will change the character stats accordingly to item abilities, 
- +setLvel(): double
+  +Level(double l): double
  	update character stats with corresponding level, return level
 
  
