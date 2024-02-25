@@ -14,19 +14,20 @@ class Character {
 	string HeroClass;
     string name;
 	double health;
+   double speed;
 	double dexterity;
-    double strength;
-    double wisdom;
-    double intelligence;
-    bool status;
+   double strength;
+   double wisdom;
+   double intelligence;
+   bool status;
 
  public:
- 	Character(HeroRace, const string &, double, double, double, double, double);
- 	HeroRace setStats(string c);
-    HeroRace getReace();
-    string getStats();
+ 	Character(HeroRace, const string &, double, double, double, double, double, double);
+ 	void setStats(string c);
+   HeroRace getReace();
+   string getStats();
  	void damage(double d);
-    void attack(character& );
+   void attack(character& );
  	bool isAlive();
  
  };
