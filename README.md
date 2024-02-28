@@ -39,6 +39,7 @@ Takes in character Hero Race’s and class corresponding stats and computes
 	Returnings false if health is less than 1 and true otherwise, 
 
 >Human/Dwarf/Dragonborn/Elf Class:
+>
 
 >+attackstrength(double, double, double,double): double
 takes in character's stats and computes total damage character will inflict when attacking,
@@ -54,10 +55,10 @@ takes in character's stats and computes total damage character will inflict when
 >
 >
 >Opponent Class
+>
 >set_attackstrength and set_hitpoint will pass in user's level and determine difficulty of opponent
->
->
 >Interaction class
+>
 >+sei_initiative determines who goes first
 >end_turn() will keep track of who's turn it currently is
 >won(character& ) will perform end of battle actions
