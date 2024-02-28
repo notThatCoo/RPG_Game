@@ -51,8 +51,12 @@ takes in character's stats and computes total damage character will inflict when
 	Outputs the contents of inventory, gives the user an option to equip item, and will change the character stats accordingly to item abilities, 
  >+Level(double l): double
  	update character stats with corresponding level, return level
+>
+>
 >Opponent Class
 >set_attackstrength and set_hitpoint will pass in user's level and determine difficulty of opponent
+>
+>
 >Interaction class
 >+sei_initiative determines who goes first
 >end_turn() will keep track of who's turn it currently is
