@@ -1,12 +1,12 @@
 #include <iostream>
-#include "Character.h"
+#include "../header/character.hpp"
 using namespace std;
 
     
-Character::Character(HeroRace Race, const string &name, double health, double speed, double dexterity, double strength, double wisdom, double intelligence)
-: type(type), name(name), health(health), dexterity(dexterity), strength(strength), wisdom(wisdom), intelligence(intelligence) {}
+Character::Character(Race HeroRace, const string &name, double health, double speed, double dexterity, double strength, double wisdom, double intelligence)
+: HeroRace(HeroRace), name(name), health(health), dexterity(dexterity), strength(strength), wisdom(wisdom), intelligence(intelligence) {}
 
-void setStats(string c){
+void Character::setStats(string c){
     if (c == "Knight"|| c== "knight"){
         health += 2;
         dexterity -= 1;
@@ -31,21 +31,21 @@ void setStats(string c){
     }
 
 }
-HeroRace Character::getReace(){
-    return Race; 
+Race Character::getRace(){
+    return HeroRace; 
 
 }
 string Character::getStats(){
     
 
 }
-void damage(double d){
+void Character::damage(double d){
 
 }
-void attack(character& ){
+void Character::attack(Character&){
 
 }
-bool isAlive(){
+bool Character::isAlive(){
     if(health < 1){
         return false;
     }
