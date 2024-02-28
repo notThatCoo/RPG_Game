@@ -22,12 +22,12 @@ class Character {
    bool status;
 
  public:
- 	Character(HeroRace, const string &, double, double, double, double, double, double);
+ 	Character(Race, const string &, double, double, double, double, double, double);
  	void setStats(string c);
-   HeroRace getReace();
+   Race getReace();
    string getStats();
  	void damage(double d);
-   void attack(character& );
+   void attack(Character& );
  	bool isAlive();
  
  };
