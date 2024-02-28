@@ -17,39 +17,46 @@
 
 ## Class Diagram
 
-![RPG_Class (1)-Page-1](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/865ffb3d-7599-4721-950d-96b0885c5e4e)
+![RPG_Class drawio](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/7b1e2c40-7ed0-44f1-96cf-60ba77608e47)
+
 
 
 Class Diagram Description:
-Character class:
+>Character class:
 
-+Character(Hero Race, Hero Class, const string &, double ,double,double,double)
+>+Character(Hero Race, Hero Class, const string &, double ,double,double,double)
 	Creates character,
-+HeroRace set stats(string c): void
+>+HeroRace set stats(string c): void
 Takes in character Hero Race’s and class corresponding stats and computes 
 	Total character stats,
-+get stats(): string 
+>+get stats(): string 
 	Out put character’s name, current stats and level
-+damage(double d):void
+>+damage(double d):void
 	Compute health after taking damage, 
-+attack():void
+>+attack():void
 	character attacks Attack  
-+isAlive(): bool
+>+isAlive(): bool
 	Returnings false if health is less than 1 and true otherwise, 
 
-Human/dwarf/Dragonborn/elf Class:
+>Human/Dwarf/Dragonborn/Elf Class:
 
-+attackstrength(double, double, double,double): double
+>+attackstrength(double, double, double,double): double
 takes in character's stats and computes total damage character will inflict when attacking,
-+attack(character& ): void
+>+attack(character& ): void
 	Player attacks character passed in, 
-+flee(): void
+>+flee(): void
 	Character can attempt to flee a fight when it is their turn
 	Computes if character successfully flees a fight and flees if yes,
-+checkinventory(): void
+>+checkinventory(): void
 	Outputs the contents of inventory, gives the user an option to equip item, and will change the character stats accordingly to item abilities, 
-  +Level(double l): double
+ >+Level(double l): double
  	update character stats with corresponding level, return level
+>Opponent Class
+>set_attackstrength and set_hitpoint will pass in user's level and determine difficulty of opponent
+>Interaction class
+>+sei_initiative determines who goes first
+>end_turn() will keep track of who's turn it currently is
+>won(character& ) will perform end of battle actions
 
  
  > ## Phase III
