@@ -29,6 +29,7 @@ class Character {
   double getHealth() const;
  	void damage(double d);
  	bool isAlive();
+  virtual void attack(Character&) = 0;
  
  };
 

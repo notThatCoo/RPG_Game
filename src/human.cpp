@@ -1,4 +1,7 @@
-#include "../header/human.h"
+#include "../header/human.hpp"
+#include <iostream>
+
+using namespace std;
 
 // Constructor for the Human subclass
 // Human::Human(const std::string &name, double health, double speed, double dexterity, double strength, double wisdom, double intelligence)
@@ -9,6 +12,12 @@
 Human::Human(const std::string& name) 
     : Character(HUMAN, name, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0) {
     // Additional initialization specific to Human if needed
+}
+
+void Human::attack(Character &opp) {
+
+
+
 }
 
 
