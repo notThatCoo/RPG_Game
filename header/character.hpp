@@ -18,7 +18,6 @@ class Character {
   double strength;
   double wisdom;
   double intelligence;
-  bool status;
 
  public:
  	Character(Race, const string &, double, double, double, double, double, double);
@@ -29,6 +28,8 @@ class Character {
  	void damage(double d);
  	bool isAlive();
   virtual void attack(Character&) =  0;
+  virtual void heal();
+  virtual void flee();
  
  };
 

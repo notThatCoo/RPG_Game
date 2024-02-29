@@ -50,3 +50,11 @@ bool Character::isAlive(){
     if(health < 1){ return false; }
     else { return true; }
 }
+
+void Character::heal() { health += 10; }
+
+void Character::flee() {
+
+
+    
+}
