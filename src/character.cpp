@@ -29,28 +29,24 @@ void Character::setStats(string c){
         wisdom += 3;
         intelligence +=3;
     }
-
+    if(c== "Assassin" || c== "assassin"){
+        health -= 1;
+        speed += 1;
+        dexterity += 2;
+        strength += 1;
+        wisdom -= 3;
+    }
 }
-Race Character::getRace(){
-    return HeroRace; 
+Race Character::getRace() const { return HeroRace; }
 
-}
-string Character::getStats(){
-    
+const string &Character::getName() const { return name; }
 
-}
-void Character::damage(double d){
+double Character::getHealth() const { return health; }
 
-}
-void Character::attack(Character&){
+void Character::damage(double d) { health -= d; }
 
-}
 bool Character::isAlive(){
-    if(health < 1){
-        return false;
-    }
-    else{
-        return true;
-    }
 
+    if(health < 1){ return false; }
+    else { return true; }
 }

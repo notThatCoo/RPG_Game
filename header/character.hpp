@@ -2,8 +2,8 @@
 
 using namespace std;
 
-#ifndef __CHARACTER_H__
-#define __CHARACTER_H__
+#ifndef __CHARACTER_HPP__
+#define __CHARACTER_HPP__
 
 enum Race{HUMAN, ELF, DRAGANOID, DWARF};
 
@@ -11,22 +11,22 @@ class Character {
  protected:
 	Race HeroRace;
 	string HeroClass;
-    string name;
+  string name;
 	double health;
-   double speed;
+  double speed;
 	double dexterity;
-   double strength;
-   double wisdom;
-   double intelligence;
-   bool status;
+  double strength;
+  double wisdom;
+  double intelligence;
+  bool status;
 
  public:
  	Character(Race, const string &, double, double, double, double, double, double);
  	void setStats(string c);
-   Race getRace();
-   string getStats();
+  Race getRace() const;
+  const string& getName() const;
+  double getHealth() const;
  	void damage(double d);
-   void attack(Character&);
  	bool isAlive();
  
  };
