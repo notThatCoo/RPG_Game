@@ -3,8 +3,8 @@
 using namespace std;
 
     
-Character::Character(Race HeroRace, const string &name, double health, double speed, double dexterity, double strength, double wisdom, double intelligence)
-: HeroRace(HeroRace), name(name), health(health), dexterity(dexterity), strength(strength), wisdom(wisdom), intelligence(intelligence) {}
+Character::Character(Race HeroRace, const string &name, const string& myClass, double health, double dexterity, double strength, double wisdom, double intelligence, int numHealing)
+: HeroRace(HeroRace), name(name), myClass(myClass), health(health), dexterity(dexterity), strength(strength), wisdom(wisdom), intelligence(intelligence), numHealing(numHealing) {}
 
 void Character::setStats(string c){
     if (c == "Knight"|| c== "knight"){
@@ -15,26 +15,23 @@ void Character::setStats(string c){
         intelligence +=1;
     }
     if(c== "Archer"|| c== "archer"){
-        speed += 2;
-        dexterity += 1;
+        dexterity += 3;
         strength -= 2;
         wisdom += 2;
         intelligence -=3;
     }
     if(c== "Wizard" || c== "wizard"){
         health -= 1;
-        speed -= 1;
-        dexterity -= 2;
+        dexterity -= 3;
         strength -= 2;
         wisdom += 3;
         intelligence +=3;
     }
     if(c== "Assassin" || c== "assassin"){
         health -= 1;
-        speed += 1;
         dexterity += 2;
         strength += 1;
-        wisdom -= 3;
+        wisdom -= 2;
     }
 }
 Race Character::getRace() const { return HeroRace; }
@@ -42,6 +39,8 @@ Race Character::getRace() const { return HeroRace; }
 const string &Character::getName() const { return name; }
 
 double Character::getHealth() const { return health; }
+
+int Character::getNumHealing() const { return numHealing; }
 
 void Character::damage(double d) { health -= d; }
 
@@ -51,7 +50,16 @@ bool Character::isAlive(){
     else { return true; }
 }
 
-void Character::heal() { health += 10; }
+void Character::heal() { 
+    
+    if (numHealing > 1) {
+
+        health += 50;
+        --numHealing;
+
+    }
+    else { cout << "No healing items left" << endl; }  
+}
 
 void Character::flee() {
 

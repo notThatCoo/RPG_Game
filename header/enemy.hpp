@@ -6,20 +6,15 @@
 using namespace std;
 
 class Enemy : public Character {
+ private:
+  double maxHealth; 
+
  public:
 
-    Enemy(const string &, double, int);
+    Enemy(const string &, double, int, double);
 
     void attack(Character&);
 
 };
-
-
-
-
-
-
-
-
 
 #endif
