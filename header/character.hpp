@@ -24,12 +24,15 @@ class Character {
  public:
  	Character(Race, const string &, const string &, double, double, double, double, double, int);
   Character(Race, const string &, double, int, double);
+
  	void setStats(string c);
   Race getRace() const;
   const string& getName() const;
   double getHealth() const;
+  int getNumHealing() const;
  	void damage(double d);
  	bool isAlive();
+
   virtual void attack(Character&) = 0;
   virtual void heal();
   virtual void flee();

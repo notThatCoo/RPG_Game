@@ -40,6 +40,8 @@ const string &Character::getName() const { return name; }
 
 double Character::getHealth() const {return health; }
 
+int Character::getNumHealing() const { return numHealing; }
+
 void Character::damage(double d) { health -= d; }
 
 bool Character::isAlive(){
