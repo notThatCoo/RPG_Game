@@ -2,8 +2,8 @@
 #include "../header/character.hpp"
 using namespace std;
 
-Character::Character(Race HeroRace, const string &name, double health, double speed, double dexterity, double strength, double wisdom, double intelligence)
-: HeroRace(HeroRace), name(name), health(health), dexterity(dexterity), strength(strength), wisdom(wisdom), intelligence(intelligence) {}
+Character::Character(Race HeroRace, const string &name, const string& myClass, double health, double dexterity, double strength, double wisdom, double intelligence, int numHealing)
+: HeroRace(HeroRace), name(name), myClass(myClass), health(health), dexterity(dexterity), strength(strength), wisdom(wisdom), intelligence(intelligence), numHealing(numHealing) {}
 
 void Character::setStats(string c){
     if (c == "Knight"|| c== "knight"){
@@ -14,26 +14,23 @@ void Character::setStats(string c){
         intelligence +=1;
     }
     if(c== "Archer"|| c== "archer"){
-        speed += 2;
-        dexterity += 1;
+        dexterity += 3;
         strength -= 2;
         wisdom += 2;
         intelligence -=3;
     }
     if(c== "Wizard" || c== "wizard"){
         health -= 1;
-        speed -= 1;
-        dexterity -= 2;
+        dexterity -= 3;
         strength -= 2;
         wisdom += 3;
         intelligence +=3;
     }
     if(c== "Assassin" || c== "Assassin"){
         health -= 1;
-        speed += 1;
         dexterity += 2;
         strength += 1;
-        wisdom -= 3;
+        wisdom -= 2;
     }
 
 }
@@ -49,4 +46,16 @@ bool Character::isAlive(){
     
     if(health < 1){ return false; }
     else { return true; }
+}
+
+void Character::heal() { 
+
+    if (numHealing > 1) { 
+
+        health += 50;
+        --numHealing;
+
+    }
+    else { cout << "No healing items left" << endl; }
+
 }

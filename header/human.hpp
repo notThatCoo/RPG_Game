@@ -8,15 +8,14 @@ using namespace std;
 class Human : public Character {
 public:
     // Constructor for the Human subclass
-    Human(const string &name, double health, double speed, double dexterity, double strength, double wisdom, double intelligence);
+    Human(const string &name, const string &myClass, double health, double dexterity, double strength, double wisdom, double intelligence, int numHealing);
 
-    Human(const string& name);
+    Human(const string& name, const string& myClass);
 
     void attack(Character& ) override;
 
-    // Additional member functions specific to Human if needed
-    // For example, you could add functions for Human-specific behavior or abilities
-    void specialAbility();
+    void flee() override;
+
 };
 
 #endif

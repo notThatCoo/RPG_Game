@@ -1,5 +1,6 @@
 #include "../header/human.hpp"
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -9,23 +10,22 @@ using namespace std;
 //     // Additional initialization specific to Human if needed
 // }
 
-Human::Human(const std::string& name) 
-    : Character(HUMAN, name, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0) {
+Human::Human(const string& name, const string& myClass) 
+    : Character(HUMAN, name, myClass, 100.0, 10.0, 10.0, 10.0, 10.0, 3) {
     // Additional initialization specific to Human if needed
 }
 
 void Human::attack(Character &opp) {
 
-    double damage = ((strength + intelligence) * 0.2) + ((dexterity + wisdom) * 0.1);
+    attackStrength = ((strength + intelligence) * 2) + ((dexterity + wisdom) * 1);
+
+    double damage = rand() % (attackStrength + 1);
     
     opp.damage(damage);
 
 }
 
+void Human::flee() {
 
-// Optionally, you can define additional member functions for the Human subclass here
-// For example:
-void Human::specialAbility() {
-    cout << this->name;
-    // Implement special ability for Human
+
 }
