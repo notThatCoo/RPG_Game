@@ -36,7 +36,7 @@ class Character {
  	void damage(double d);
  	bool isAlive();
 
-  virtual void attack(Character&) = 0;
+  virtual void attack(Character&, Character&) = 0;
   virtual void heal();
   virtual void flee();
  

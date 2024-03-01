@@ -8,9 +8,9 @@ Dragonborn::Dragonborn(const string& name, const string& myClass)
     : Character(DRAGONBORN, name, myClass, 100.0, 10.0, 10.0, 10.0, 10.0, 3) {
 }
 
-void Dragonborn::attack(Character &opp) {
+void Dragonborn::attack(Character &you, Character &opp) {
 
-    attackStrength = ((strength + intelligence) * 2) + ((dexterity + wisdom) * 1);
+    attackStrength = getAttackStrength(you);
 
     if (rand() % 2 == 1) { attackStrength += 10; }
 

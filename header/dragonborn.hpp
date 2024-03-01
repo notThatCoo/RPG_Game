@@ -12,7 +12,7 @@ public:
 
     Dragonborn(const string& name, const string& myClass);
 
-    void attack(Character& ) override;
+    void attack(Character&, Character&) override;
 
     void flee() override;
 
