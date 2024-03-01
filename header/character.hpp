@@ -5,7 +5,7 @@ using namespace std;
 #ifndef __CHARACTER_HPP__
 #define __CHARACTER_HPP__
 
-enum Race{HUMAN, ELF, DRAGANOID, DWARF};
+enum Race{HUMAN, ELF, DRAGANOID, DWARF, ENEMY};
 
 class Character {
  protected:
@@ -18,9 +18,11 @@ class Character {
   double strength;
   double wisdom;
   double intelligence;
+  int attackStrength;
 
  public:
  	Character(Race, const string &, double, double, double, double, double, double);
+  Character(Race, const string &, double, int);
  	void setStats(string c);
   Race getRace() const;
   const string& getName() const;
