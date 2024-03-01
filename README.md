@@ -13,7 +13,11 @@
 
 
 ### Navigation Diagram
-![CS100 final project](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/3d156cca-8f1f-4e43-9b68-a78160826cc4)
+
+![jdksbck](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/d10c5d8b-496c-4fd7-9422-a4ef31bf002a)
+>Navigation Diagram Description
+>For each iteration of “Arrived at opponent” the opponent will change and increase in difficulty. From iteration 0 to 3 the opponents will be goblin, wolf, giant snake and malevolent spider. On the 4th iteration the opponent is a dragon, this is the final boss and after successfully defeating the dragon the user beats the game.
+
 
 ## Class Diagram
 
