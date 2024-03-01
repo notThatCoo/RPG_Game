@@ -5,7 +5,7 @@ using namespace std;
 #ifndef __CHARACTER_HPP__
 #define __CHARACTER_HPP__
 
-enum Race{HUMAN, ELF, DRAGANOID, DWARF, ENEMY};
+enum Race{HUMAN, ELF, DRAGONBORN, DWARF, ENEMY};
 
 class Character {
  protected:
