@@ -16,7 +16,9 @@ Human::Human(const std::string& name)
 
 void Human::attack(Character &opp) {
 
-
+    double damage = ((strength + intelligence) * 0.2) + ((dexterity + wisdom) * 0.1);
+    
+    opp.damage(damage);
 
 }
 

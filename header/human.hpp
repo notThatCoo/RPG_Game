@@ -14,7 +14,6 @@ public:
 
     void attack(Character& ) override;
 
-
     // Additional member functions specific to Human if needed
     // For example, you could add functions for Human-specific behavior or abilities
     void specialAbility();
