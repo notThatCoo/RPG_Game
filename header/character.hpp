@@ -10,7 +10,6 @@ enum Race{HUMAN, ELF, DRAGONBORN, DWARF, ENEMY};
 class Character {
  protected:
 	Race HeroRace;
-	string HeroClass;
   string name;
   string myClass;
 	double health;
@@ -26,10 +25,14 @@ class Character {
   Character(Race, const string &, double, int, double);
 
  	void setStats(string c);
+
   Race getRace() const;
+  const string& getClass() const;
   const string& getName() const;
   double getHealth() const;
   int getNumHealing() const;
+  double getAttackStrength(Character&) const;
+
  	void damage(double d);
  	bool isAlive();
 

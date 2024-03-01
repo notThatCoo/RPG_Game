@@ -6,27 +6,27 @@ Character::Character(Race HeroRace, const string &name, const string& myClass, d
 : HeroRace(HeroRace), name(name), myClass(myClass), health(health), dexterity(dexterity), strength(strength), wisdom(wisdom), intelligence(intelligence), numHealing(numHealing) {}
 
 void Character::setStats(string c){
-    if (c == "Knight"|| c== "knight"){
+    if (c == "Knight"){
         health += 2;
         dexterity -= 1;
         strength += 2;
         wisdom -= 4;
         intelligence +=1;
     }
-    if(c== "Archer"|| c== "archer"){
+    if(c== "Archer"){
         dexterity += 3;
         strength -= 2;
         wisdom += 2;
         intelligence -=3;
     }
-    if(c== "Wizard" || c== "wizard"){
+    if(c== "Wizard"){
         health -= 1;
         dexterity -= 3;
         strength -= 2;
         wisdom += 3;
         intelligence +=3;
     }
-    if(c== "Assassin" || c== "Assassin"){
+    if(c== "Assassin"){
         health -= 1;
         dexterity += 2;
         strength += 1;
@@ -36,11 +36,37 @@ void Character::setStats(string c){
 }
 Race Character::getRace() const { return HeroRace; }
 
+const string &Character::getClass() const { return myClass; }
+
 const string &Character::getName() const { return name; }
 
 double Character::getHealth() const {return health; }
 
 int Character::getNumHealing() const { return numHealing; }
+
+double Character::getAttackStrength(Character &you) const {
+
+    if (you.getClass() == "Knight") {
+
+        return ((strength + intelligence) * 2) + ((dexterity + wisdom) * 1);
+
+    }
+    else if (you.getClass() == "Archer") {
+
+        return ((strength + intelligence) * 1) + ((dexterity + wisdom) * 2);
+
+    }
+    else if (you.getClass() == "Wizard") {
+
+        return ((wisdom + intelligence) * 2) + ((dexterity + strength) * 1);
+
+    }
+    else if (you.getClass() == "Assassin") {
+
+        return ((strength + dexterity) * 2) + ((intelligence + wisdom) * 1);
+
+    }
+}
 
 void Character::damage(double d) { health -= d; }
 
