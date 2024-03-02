@@ -39,12 +39,16 @@ Takes in character Hero Race’s and class corresponding stats and computes
 >+damage(double d):void
 	Compute health after taking damage, 
 >+attack():void
-	character attacks Attack  
+	character attacks Attack
+>getRace():HeroRace
+	returns a hero's race
 >+isAlive(): bool
-	Returnings false if health is less than 1 and true otherwise, 
-
+	Returnings false if health is less than 1 and true otherwise
 >Human/Dwarf/Dragonborn/Elf Class:
->
+
+<RaceName>(Race, const string&, const string&, double, double,
+double, double, double, int)
+constructs a race class
 
 >+attackstrength(double, double, double,double): double
 takes in character's stats and computes total damage character will inflict when attacking,
@@ -61,7 +65,10 @@ takes in character's stats and computes total damage character will inflict when
 >
 >Opponent Class
 >
->set_attackstrength and set_hitpoint will pass in user's level and determine difficulty of opponent
+>+set_attackstrength and +set_hitpoint will pass in user's level and determine difficulty of opponent
+>+isAlive():bool
+	returns if the opponent is alive
+>+damage(double d):void
 >Interaction class
 >
 >+sei_initiative determines who goes first
