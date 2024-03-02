@@ -42,7 +42,7 @@ class Character {
 
   virtual void attack(Character&, Character&) = 0;
   virtual void heal();
-  virtual void flee();
+  virtual void flee() = 0;
  
  };
 

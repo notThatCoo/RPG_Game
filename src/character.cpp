@@ -64,8 +64,8 @@ double Character::getAttackStrength(Character &you) const {
     else if (you.getClass() == "Assassin") {
 
         return ((you.getStrength() + you.getDexterity()) * 2) + ((you.getIntelligence() + you.getWisdom()) * 1);
-
     }
+    else { return 1; }
 }
 
 double Character::getStrength() const { return strength; }
