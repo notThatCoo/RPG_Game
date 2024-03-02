@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Dragonborn::Dragonborn(const string& name, const string& myClass) 
+Dragonborn::Dragonborn(const string& name, const string& myClass, double health, double dexterity, double strength, double wisdom, double intelligence, int numHealing) 
     : Character(DRAGONBORN, name, myClass, health, dexterity, strength, wisdom, intelligence, numHealing) {
 }
 
@@ -22,5 +22,5 @@ void Dragonborn::attack(Character &you, Character &opp) {
 
 void Dragonborn::flee() {
 
-    cout << ;
+    cout << getStrength();
 }
