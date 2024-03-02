@@ -68,6 +68,11 @@ double Character::getAttackStrength(Character &you) const {
     }
 }
 
+double Character::getStrength() const { return strength; }
+double Character::getWisdom() const { return wisdom; }
+double Character::getDexterity() const { return dexterity; }
+double Character::getIntelligence() const { return intelligence; }
+
 void Character::damage(double d) { health -= d; }
 
 bool Character::isAlive(){

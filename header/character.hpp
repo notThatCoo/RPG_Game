@@ -32,6 +32,10 @@ class Character {
   double getHealth() const;
   int getNumHealing() const;
   double getAttackStrength(Character&) const;
+  double getStrength() const;
+  double getWisdom() const;
+  double getDexterity() const;
+  double getIntelligence() const;
 
  	void damage(double d);
  	bool isAlive();
