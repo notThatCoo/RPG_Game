@@ -78,7 +78,7 @@ takes in character's stats and computes total damage character will inflict when
 
  
  > ## SOLID principles in Class Diagram
-> The majority of the changes made to our class diagram were to satisfy the Single-responsibility principle, In both our character and race classes we had functions that would calculate a new stat and output the changes. We split up jobs into simpler functions that perform singular jobs.
+> The majority of the changes made to our class diagram were to satisfy the Single-responsibility principle, In both our character and race classes we had functions that would calculate a new stat and output the changes. We split up jobs into simpler functions that perform singular jobs. We also made sure our ISP was correct. Classes do not implement methods they don't use.
 > 
 
 
