@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "../header/interaction.hpp"
 
 void Interaction::gameplay(){
@@ -10,32 +11,38 @@ void Interaction::gameplay(){
 	
 	srand(seed);
 
-    vector<Enemy *> enemies;
-    enemies.push_back(new Enemy("Goblin",100,0,100)); //attack at zero since we only counter attacking of misses
-    enemies.push_back(new Enemy("Wolf",150,0,150));
-    enemies.push_back(new Enemy("Melovlent Spider",200,0,200));
-    enemies.push_back(new Enemy("Falkor",250,0,250));
-    string race;
+    vector<Characters *> characters;
+    
+    int myClass;
+    int myRace;
     string name;
-    string race;
-    cout << "Choose your race: Human, Elf, Dragonoid, Dwarf" << endl;
-    cin >> myClass;
-    cout << "Choose your class: Knight, Archer, Wizard, Assasian" << endl;
+
+    cout << "Choose your race: Human (1), Elf(2), Dragonoid(3), Dwarf(4)" << endl;
+    cin >> myRace;
+    cout << "Choose your class: Knight(1), Archer(2), Wizard(3), Assassin(4)" << endl;
     cin >> myClass;
     "What will be your name?"
     cin >> name;
-    if(race == "Human" || race == "human"){
-        Character player = new Character(HUMAN,name,100,10,10,10,10,10); //dexterity, strength, wisdom, is useless
+    
+    if(myRace == 1){
+        characters.push_back(new HUMAN(name,100,10,10,10,10,10)); //dexterity, strength, wisdom, is useless
     }
-    if(race == "Elf" || race == "elf"){
-        Charecter player = new Character(ELF,name,100,10,10,10,10,10);
+    else if(myRace == 2){
+        characters.push_back(new ELF(name,100,10,10,10,10,10));
     }
-    if(race == "Dragonoid" || race == "dragonoid"){
-        Character player = new Character(DRAGANOID,name,100,10,10,10,10,10);
+    else if(myRace == 3){
+        characters.push_back(new DRAGONOID(name,100,10,10,10,10,10));
     }
-    if(race == "Dwarf" || race == "dwarf"){
-        Character player = new Character(DWARF,name,100,10,10,10,10,10);
+    else if(myRace == 4){
+       characters.push_back(new DWARF(name,100,10,10,10,10,10));
     }
+    else { throw runtime_error("Incorrect input"); }
+
+    characters.push_back(new Enemy("Goblin",100,0,100)); //attack at zero since we only counter attacking of misses
+    characters.push_back(new Enemy("Wolf",150,0,150));
+    characters.push_back(new Enemy("Melovlent Spider",200,0,200));
+    characters.push_back(new Enemy("Falkor",250,0,250));
+
     cout << "You have spawned in Windsor Castle, gear up " name " and prepare to travel the plains in search for glory" << endl;
     cout << "You are traveling the plains and see a suspicious figure following you, he is hooded and you cannot tell his race" << endl;
     cout << "You hear footsteps behind you and instinctively turn around to dodge his dagger attack!" << endl;
