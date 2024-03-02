@@ -17,7 +17,8 @@
 
 ## Class Diagram
 
-![RPG_Class-Page-1 drawio (1)](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/297dc34a-7807-45f2-99ca-71bd97b9997a)
+![RPG_Class-Page-1 drawio (2)](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/656ab897-f073-415b-ab1d-5020e5697fdb)
+
 
 
 
