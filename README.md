@@ -78,7 +78,7 @@ takes in character's stats and computes total damage character will inflict when
 
  
  > ## SOLID principles in Class Diagram
-> The majority of the changes made to our class diagram were to satisfy the Single-responsibility principle, In both our character and race classes we had functions that would calculate a new stat and output the changes. We split up jobs into simpler functions that perform singular jobs. We also made sure our ISP was correct. Classes do not implement methods they don't use.
+> The majority of the changes made to our class diagram were to satisfy the Single-responsibility principle, In both our character and race classes we had functions that would calculate a new stat and output the changes. We split up jobs into simpler functions that perform singular jobs. We also made sure our ISP was correct. Classes do not implement methods they don't use. The other change we made to satisfy the SOLID principles is adding the enemy class, without adding that class we would have to modify the character class in order to create an enemy, this satisfies the Open-Closed Principle. 
 > 
 
 
