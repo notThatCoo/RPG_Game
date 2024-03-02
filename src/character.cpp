@@ -48,22 +48,22 @@ double Character::getAttackStrength(Character &you) const {
 
     if (you.getClass() == "Knight") {
 
-        return ((strength + intelligence) * 2) + ((dexterity + wisdom) * 1);
+        return ((you.getStrength() + you.getIntelligence()) * 2) + ((you.getDexterity() + you.getWisdom()) * 1);
 
     }
     else if (you.getClass() == "Archer") {
 
-        return ((strength + intelligence) * 1) + ((dexterity + wisdom) * 2);
+        return ((you.getStrength() + you.getIntelligence()) * 1) + ((you.getDexterity() + you.getWisdom()) * 2);
 
     }
     else if (you.getClass() == "Wizard") {
 
-        return ((wisdom + intelligence) * 2) + ((dexterity + strength) * 1);
+        return ((you.getWisdom() + you.getIntelligence()) * 2) + ((you.getDexterity() + you.getStrength()) * 1);
 
     }
     else if (you.getClass() == "Assassin") {
 
-        return ((strength + dexterity) * 2) + ((intelligence + wisdom) * 1);
+        return ((you.getStrength() + you.getDexterity()) * 2) + ((you.getIntelligence() + you.getWisdom()) * 1);
 
     }
 }
