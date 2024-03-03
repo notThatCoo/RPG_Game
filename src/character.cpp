@@ -37,6 +37,14 @@ void Character::setStats(string c){
         wisdom -= 3;
     }
 }
+// void Character::getStats(){
+//     cout << this->name << endl;
+//     cout << "Health: " << this->health << endl;
+//     cout << "Dexterity: " << this->dexterity << endl;
+//     cout << "Strength: " << this->strength << endl;
+//     cout << "Wisdom: " << this->wisdom << endl;
+//     cout << "Intelligence: " << this->intelligence << endl;
+//   }
 Race Character::getRace() const { return HeroRace; }
 
 const string &Character::getName() const { return name; }

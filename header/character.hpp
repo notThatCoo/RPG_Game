@@ -22,12 +22,13 @@ class Character {
  public:
  	Character(Race, const string &, double, double, double, double, double, double);
  	void setStats(string c);
+  // void getStats();
   Race getRace() const;
   const string& getName() const;
   double getHealth() const;
  	void damage(double d);
  	bool isAlive();
-  virtual void attack(Character&) =  0;
+  //virtual void attack(Character&) =  0;
   virtual void heal();
   virtual void flee();
  
