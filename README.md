@@ -24,9 +24,6 @@
 
 ![RPG_Class-Page-1](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/f16882d4-bd5b-465a-82c8-1709567bf8c2)
 
-
-
-
 Class Diagram Description:
 >Character class:
 
@@ -39,8 +36,9 @@ Takes in character Hero Race’s and class corresponding stats and computes
 	Out put character’s name, current stats and level
 >+damage(double d):void
 	Compute health after taking damage, 
->+attack():void
-	character attacks Attack
+>+attack():void character attacks Attack  
+
+>Human/Dwarf/Dragonborn/Elf Class:
 >getRace():HeroRace
 	returns a hero's race
 >+isAlive(): bool
@@ -70,6 +68,7 @@ takes in character's stats and computes total damage character will inflict when
 >+isAlive():bool
 	returns if the opponent is alive
 >+damage(double d):void
+  
 >Interaction class
 >
 >+sei_initiative determines who goes first

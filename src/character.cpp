@@ -73,6 +73,8 @@ double Character::getWisdom() const { return wisdom; }
 double Character::getDexterity() const { return dexterity; }
 double Character::getIntelligence() const { return intelligence; }
 
+int Character::getNumHealing() const { return numHealing; }
+
 void Character::damage(double d) { health -= d; }
 
 bool Character::isAlive(){
@@ -91,4 +93,5 @@ void Character::heal() {
 
     }
     else { cout << "No healing items left" << endl; }
+  
 }
