@@ -13,14 +13,16 @@
 
 
 ### Navigation Diagram
-![CS100 final project](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/3d156cca-8f1f-4e43-9b68-a78160826cc4)
+
+![jdksbck (1)](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/09044320-e759-43c9-bf20-34bf9842d2a1)
+
+>Navigation Diagram Description
+>For each iteration of “Arrived at opponent” the opponent will change and increase in difficulty. From iteration 0 to 3 the opponents will be goblin, wolf, giant snake and malevolent spider. On the 4th iteration the opponent is a dragon, this is the final boss and after successfully defeating the dragon the user beats the game.
+
 
 ## Class Diagram
 
-![RPG_Class-Page-1 drawio (2)](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/656ab897-f073-415b-ab1d-5020e5697fdb)
-
-
-
+![RPG_Class-Page-1](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/f16882d4-bd5b-465a-82c8-1709567bf8c2)
 
 Class Diagram Description:
 >Character class:
@@ -34,13 +36,18 @@ Takes in character Hero Race’s and class corresponding stats and computes
 	Out put character’s name, current stats and level
 >+damage(double d):void
 	Compute health after taking damage, 
->+attack():void
-	character attacks Attack  
->+isAlive(): bool
-	Returnings false if health is less than 1 and true otherwise, 
+>+attack():void character attacks Attack  
 
 >Human/Dwarf/Dragonborn/Elf Class:
->
+>getRace():HeroRace
+	returns a hero's race
+>+isAlive(): bool
+	Returnings false if health is less than 1 and true otherwise
+>Human/Dwarf/Dragonborn/Elf Class:
+
+<RaceName>(Race, const string&, const string&, double, double,
+double, double, double, int)
+constructs a race class
 
 >+attackstrength(double, double, double,double): double
 takes in character's stats and computes total damage character will inflict when attacking,
@@ -57,7 +64,11 @@ takes in character's stats and computes total damage character will inflict when
 >
 >Opponent Class
 >
->set_attackstrength and set_hitpoint will pass in user's level and determine difficulty of opponent
+>+set_attackstrength and +set_hitpoint will pass in user's level and determine difficulty of opponent
+>+isAlive():bool
+	returns if the opponent is alive
+>+damage(double d):void
+  
 >Interaction class
 >
 >+sei_initiative determines who goes first
@@ -65,25 +76,10 @@ takes in character's stats and computes total damage character will inflict when
 >won(character& ) will perform end of battle actions
 
  
- > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
- 
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
- >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
- > * Perform a new sprint plan like you did in Phase II.
- > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
- 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+ > ## SOLID principles in Class Diagram
+> The majority of the changes made to our class diagram were to satisfy the Single-responsibility principle, In both our character and race classes we had functions that would calculate a new stat and output the changes. We split up jobs into simpler functions that perform singular jobs. We also made sure our ISP was correct. Classes do not implement methods they don't use. The other change we made to satisfy the SOLID principles is adding the enemy class, without adding that class we would have to modify the character class in order to create an enemy, this satisfies the Open-Closed Principle. 
+> 
+
 
  
  > ## Final deliverable

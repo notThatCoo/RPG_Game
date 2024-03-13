@@ -7,10 +7,9 @@ using namespace std;
 Enemy::Enemy(const string& name, double health, int attackStrength, double maxHealth)
     : Character(ENEMY, name, health, attackStrength, maxHealth) {}
 
-void Enemy::attack(Character &opp) {
+double Character::attack(Character &player) { //NEEDS PROPER CONNECTION!
 
-    double damage = rand() % (attackStrength + 1); 
+    double damage = rand() % (getAttackStrength(player) + 1);
 
-    opp.damage(damage);
-
+    return damage;
 }
