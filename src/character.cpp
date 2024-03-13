@@ -34,6 +34,12 @@ void Character::setStats(string c){
     }
 }
 
+void Character::setHealthToFull() {
+
+    health = health;
+
+}
+
 Race Character::getRace() const { return HeroRace; }
 
 const string &Character::getClass() const { return myClass; }
@@ -44,7 +50,7 @@ double Character::getHealth() const {return health; }
 
 int Character::getNumHealing() const { return numHealing; }
 
-double Character::getAttackStrength(Character &you) const {
+int Character::getAttackStrength(Character &you) const {
 
     if (you.getClass() == "Knight") {
 
@@ -82,6 +88,13 @@ bool Character::isAlive(){
     if(health < 1){ return false; }
     else { return true; }
   
+}
+
+double Character::attack(Character &player) {
+
+    double damage = rand() % (getAttackStrength(player) + 1);
+
+    return damage;
 }
 
 void Character::heal() { 

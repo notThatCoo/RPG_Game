@@ -12,6 +12,7 @@ class Character {
 	Race HeroRace;
   string name;
   string myClass;
+  double hearts;
 	double health;
 	double dexterity;
   double strength;
@@ -25,13 +26,15 @@ class Character {
   Character(Race, const string &, double, int, double);
 
  	void setStats(string c);
+  void setHealth(double newHealth);
+  void setHealthToFull();
 
   Race getRace() const;
   const string& getClass() const;
   const string& getName() const;
   double getHealth() const;
   int getNumHealing() const;
-  double getAttackStrength(Character&) const;
+  int getAttackStrength(Character&) const;
   double getStrength() const;
   double getWisdom() const;
   double getDexterity() const;
@@ -40,7 +43,7 @@ class Character {
  	void damage(double d);
  	bool isAlive();
 
-  virtual void attack(Character&, Character&) = 0;
+  virtual double attack(Character&);
   virtual void heal();
  
  };

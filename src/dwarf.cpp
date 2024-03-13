@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Dwarf::Dwarf(const string&name, const string &myClass, double health, double dexterity, double strength, double wisdom, double intelligence, int numHealing)
+Dwarf::Dwarf(Race HeroRace, const string&name, const string &myClass, double health, double dexterity, double strength, double wisdom, double intelligence, int numHealing)
     : Character (DWARF, name, myClass, health, dexterity, strength, wisdom, intelligence, numHealing){}
 
 void Dwarf::heal() { 

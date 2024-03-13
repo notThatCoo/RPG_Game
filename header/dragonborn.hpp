@@ -8,13 +8,9 @@ using namespace std;
 class Dragonborn : public Character {
 public:
     // Constructor for the Dragonborn subclass
-    Dragonborn(const string &name, const string &myClass, double health, double dexterity, double strength, double wisdom, double intelligence, int numHealing);
+    Dragonborn(Race, const string &name, const string &myClass, double health, double dexterity, double strength, double wisdom, double intelligence, int numHealing);
 
-    Dragonborn(const string& name, const string& myClass);
-
-    void attack(Character&, Character&) override;
-
-    void flee() override;
+    double attack(Character&) override;
 
 };
 

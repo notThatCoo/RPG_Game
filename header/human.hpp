@@ -7,7 +7,7 @@ using namespace std;
 
 class Human : public Character {
  public:
-    Human(const string&, const string &, double , double, double, double, double, int);
+    Human(Race, const string&, const string &, double , double, double, double, double, int);
 
 };
 

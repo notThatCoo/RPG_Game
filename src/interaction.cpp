@@ -1,6 +1,12 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "../header/character.hpp"
+#include "../header/human.hpp"
+#include "../header/dwarf.hpp"
+#include "../header/elf.hpp"
+#include "../header/dragonborn.hpp"
+#include "../header/enemy.hpp"
 #include "../header/interaction.hpp"
 
 void Interaction::gameplay(){
@@ -11,36 +17,42 @@ void Interaction::gameplay(){
 	
 	srand(seed);
 
-    vector<Characters *> characters;
+    vector<Character*> characters;
     
-    int myClass;
+    int myClassInt;
     int myRace;
     string name;
+    string myClass;
     
     restart:
 
     cout << "Choose your race: Human (1), Elf(2), Dragonoid(3), Dwarf(4)" << endl;
     cin >> myRace;
     cout << "Choose your class: Knight(1), Archer(2), Wizard(3), Assassin(4)" << endl;
-    cin >> myClass;
-    "What will be your name?"
+    cin >> myClassInt;
+    cout << "What will be your name?" << endl;
     cin >> name;
+
+    if (myClassInt == 1) { myClass = "Knight"; }
+    else if (myClassInt == 2) { myClass = "Archer"; }
+    else if (myClassInt == 3) { myClass = "Wizard"; }
+    else if (myClassInt == 4) { myClass = "Assassin"; }
     
     if(myRace == 1){
-        characters.push_back(new HUMAN(name,100,10,10,10,10,10)); //dexterity, strength, wisdom, is useless
+        characters.push_back(new Human(HUMAN, name, myClass, 100,10,10,10,10,5));
     }
     else if(myRace == 2){
-        characters.push_back(new ELF(name,100,10,10,10,10,10));
+        characters.push_back(new Elf(ELF, name, myClass, 100,10,10,10,10,10));
     }
     else if(myRace == 3){
-        characters.push_back(new DRAGONOID(name,100,10,10,10,10,10));
+        characters.push_back(new Dragonborn(DRAGONBORN, name, myClass, 100,10,10,10,10,10));
     }
     else if(myRace == 4){
-       characters.push_back(new DWARF(name,100,10,10,10,10,10));
+       characters.push_back(new Dwarf(DWARF, name, myClass, 100,10,10,10,10,10));
     }
     else { throw runtime_error("Incorrect input"); }
 
-    characters.push_back(new Enemy("Goblin",80,0,100)); //attack at zero since we only counter attacking of misses
+    characters.push_back(new Enemy("Goblin",80,0,100));
     characters.push_back(new Enemy("Wolf",120,0,150));
     characters.push_back(new Enemy("Melovlent Spider",170,0,200));
     characters.push_back(new Enemy("Falkor",200,0,250));
@@ -49,50 +61,50 @@ void Interaction::gameplay(){
     cout << "You are traveling the plains and see a suspicious figure following you, he is hooded and you cannot tell his race" << endl;
     cout << "You hear footsteps behind you and instinctively turn around to dodge his dagger attack!" << endl;
     cout << "It's a goblin! Goblins always tend to prey on travelers, prepare for battle!" << endl;
-    string choice;
+    int choice;
 
-    while(characters[0].isAlive() && characters[1].isAlive()){
+    while(characters[0]->isAlive() && characters[1]->isAlive()){
         cout << "Will you attack (1), heal (2) or flee(3)" << endl;
    		cin >> choice;
         if(choice == 1){
-            double damage = Attack(characters[0]);
-            if(damage <= (characters[1].getHealth()/5)){
+            double damage = attack(*characters[0]);
+            if(damage <= (characters[1]->getHealth()/5)){
                 cout << "Your attack was ass! The goblin dodged your attack and slashed you!" << endl;
-                characters[0].damage(damage);
-                cout << "Your HP is " << characters[0].getHealth() << endl;
+                characters[0]->damage(damage);
+                cout << "Your HP is " << characters[0]->getHealth() << endl;
             }
             else{
                 cout << "Good shit! You just hit the goblin for " << damage << "HP!" << endl;
-                characters[1].damage(damage);
+                characters[1]->damage(damage);
             }
         }
         if(choice == 2){
-            characters[0].heal();
-            cout << "Your HP is " << characters[0].getHealth() << endl;
+            characters[0]->heal();
+            cout << "Your HP is " << characters[0]->getHealth() << endl;
         }
         if(choice == 3){
             if(myRace == 1){
-                character[0].setHealth(100); //NEED A SET HEALTH FUNCION!!!!!!
+                characters[0]->setHealth(100); //NEED A SET HEALTH FUNCION!!!!!!
             }
             cout << "You ran off from the goblin across the plains" << endl;
             break;
         }
     }
-    if(characters[0].isAlive() == false){
+    if(characters[0]->isAlive() == false){
         cout << "The goblin has slained you pathethic mortal, YOU DIED" << endl;
         characters.clear();
         goto restart;
     }
-    if(characters[1].isAlive() == false){
+    if(characters[1]->isAlive() == false){
         cout << "The goblin has been slain, you walk over his body and notice he has dropped a shard" << endl;
-        cout << "The shard can be used to level up attack damage or health, what will you choose" << endl;
+        cout << "The shard can be used to level up strength(1) or health(2), what will you choose" << endl;
         cin >> choice;
 
-        if(choice == "damage" || choice == "Damage"){
-        characters[0].setStrength(1.5); //NEED A SET STRENGTH FUNCTION!!!!! 1.5 is the multiplier
+        if(choice == 1){
+        characters[0]->setStrength(1.5); //NEED A SET STRENGTH FUNCTION!!!!! 1.5 is the multiplier
         }
-        if(choice == "health" || choice == "Health"){
-            characters[0].setHealth(1.5); //NEED A SET HEALTH FUNCTION!!!!! 1.5 is the multiplier
+        if(choice == 2){
+            characters[0]->setHealth(1.5); //NEED A SET HEALTH FUNCTION!!!!! 1.5 is the multiplier
         }
     }
 
@@ -105,48 +117,48 @@ void Interaction::gameplay(){
     cout << "Its a wolf! It charges at you full speed and attempts to bite you" << endl;
     cout << "You dodge and the battle is on!" << endl;
 
-    while(characters[0].isAlive() && characters[2].isAlive()){
+    while(characters[0]->isAlive() && characters[2]->isAlive()){
         cout << "Will you attack (1), heal (2) or flee(3)" << endl;
    		cin >> choice;
         if(choice == 1){
-            double damage = Attack(characters[0]);
-            if(damage <= (characters[2].getHealth()/5)){
+            double damage = attack(*characters[0]);
+            if(damage <= (characters[2]->getHealth()/5)){
                 cout << "Your attack was ass! The Wolf dodged your attack and bit you!" << endl;
-                characters[0].damage(damage);
-                cout << "Your HP is " << characters[0].getHealth() << endl;
+                characters[0]->damage(damage);
+                cout << "Your HP is " << characters[0]->getHealth() << endl;
             }
             else{
                 cout << "Good shit! You just hit the Wolf for " << damage << "HP!" << endl;
-                characters[2].damage(damage);
+                characters[2]->damage(damage);
             }
         }
         if(choice == 2){
-            characters[0].heal();
-            cout << "Your HP is " << characters[0].getHealth() << endl;
+            characters[0]->heal();
+            cout << "Your HP is " << characters[0]->getHealth() << endl;
         }
         if(choice == 3){
             if(myRace == 1){
-                character[0].setHealth(100); //NEED A SET HEALTH FUNCION!!!!!!
+                characters[0]->setHealth(100); //NEED A SET HEALTH FUNCION!!!!!!
             }
             cout << "You ran back into the hut and shut the door" << endl;
             break;
         }
     }
-    if(characters[0].isAlive() == false){
+    if(characters[0]->isAlive() == false){
         cout << "The Wolf pounced on top of you and mauled your head off, YOU DIED" << endl;
         characters.clear();
         goto restart;
     }
-    if(characters[2].isAlive() == false){
+    if(characters[2]->isAlive() == false){
         cout << "The Wolf has been slain, you walk over its body and notice the wolf dropped a gold plated tooth" << endl;
-        cout << "The tooth can be used to level up wisdom or health, what will you choose" << endl;
+        cout << "The tooth can be used to level up wisdom(1) or health(2), what will you choose" << endl;
         cin >> choice;
 
-        if(choice == "wisdom" || choice == "Wisdom"){
-        characters[0].setWisdom(1.5); //NEED A SET WISDOM FUNCTION!!!!! 1.5 is the multiplier
+        if(choice == 1){
+        characters[0]->setWisdom(1.5); //NEED A SET WISDOM FUNCTION!!!!! 1.5 is the multiplier
         }
-        if(choice == "health" || choice == "Health"){
-            characters[0].setHealth(1.5); //NEED A SET HEALTH FUNCTION!!!!! 1.5 is the multiplier
+        if(choice == 2){
+            characters[0]->setHealth(1.5); //NEED A SET HEALTH FUNCTION!!!!! 1.5 is the multiplier
         }
     }
 
@@ -159,48 +171,48 @@ void Interaction::gameplay(){
     cout << "In that moment you see spider 20 feet tall in the tree" << endl;
     cout << "It scurrys down and is preparing to taack you!" << endl;
 
-    while(characters[0].isAlive() && characters[3].isAlive()){
+    while(characters[0]->isAlive() && characters[3]->isAlive()){
         cout << "Will you attack (1), heal (2) or flee(3)" << endl;
    		cin >> choice;
         if(choice == 1){
-            double damage = Attack(characters[0]);
-            if(damage <= (characters[3].getHealth()/5)){
+            double damage = attack(*characters[0]);
+            if(damage <= (characters[3]->getHealth()/5)){
                 cout << "Your attack was ass! The spider dodged your attack and hit you with its leg!" << endl;
-                characters[0].damage(damage);
-                cout << "Your HP is " << characters[0].getHealth() << endl;
+                characters[0]->damage(damage);
+                cout << "Your HP is " << characters[0]->getHealth() << endl;
             }
             else{
                 cout << "Good shit! You just hit the spider for " << damage << "HP!" << endl;
-                characters[3].damage(damage);
+                characters[3]->damage(damage);
             }
         }
         if(choice == 2){
-            characters[0].heal();
-            cout << "Your HP is " << characters[0].getHealth() << endl;
+            characters[0]->heal();
+            cout << "Your HP is " << characters[0]->getHealth() << endl;
         }
         if(choice == 3){
             if(myRace == 1){
-                character[0].setHealth(100); //NEED A SET HEALTH FUNCION!!!!!!
+                characters[0]->setHealth(100); //NEED A SET HEALTH FUNCION!!!!!!
             }
             cout << "You ran off from the spider barely makingit out by running into a nearby cave" << endl;
             break;
         }
     }
-    if(characters[0].isAlive() == false){
+    if(characters[0]->isAlive() == false){
         cout << "The grabbed you by its leg and wrapped you up before devouring you, YOU DIED" << endl;
         characters.clear();
         goto restart;
     }
-    if(characters[3].isAlive() == false){
+    if(characters[3]->isAlive() == false){
         cout << "The Spider has been slain, you walk over its body and notice the spider dropped Heros venom" << endl;
-        cout << "Heros venom can be used to level up intellegnce or health, what will you choose" << endl;
+        cout << "Heros venom can be used to level up intellegnce(1) or health(2), what will you choose" << endl;
         cin >> choice;
 
-        if(choice == "intellegence" || choice == "Intellegence"){
-        characters[0].setIntellegence(1.5); //NEED A SET intellegence FUNCTION!!!!! 1.5 is the multiplier
+        if(choice == 1){
+        characters[0]->setIntellegence(1.5); //NEED A SET intellegence FUNCTION!!!!! 1.5 is the multiplier
         }
-        if(choice == "health" || choice == "Health"){
-            characters[0].setHealth(1.5); //NEED A SET HEALTH FUNCTION!!!!! 1.5 is the multiplier
+        if(choice == 2){
+            characters[0]->setHealth(1.5); //NEED A SET HEALTH FUNCTION!!!!! 1.5 is the multiplier
         }
     }
 
@@ -217,33 +229,33 @@ void Interaction::gameplay(){
     cout << "You pull your pants up and greet the princess prompting to saveher from this castle" << endl;
     cout << "In that moment a Dragon tears the roof of your building! You leap to the princess to cover her form the rubble" << endl;
     cout << "The dragon roars in power and you uncover yourself from the rubble, there is no fleeing now" << endl;
-    while(characters[0].isAlive() && characters[4].isAlive()){
+    while(characters[0]->isAlive() && characters[4]->isAlive()){
         cout << "Will you attack (1) or heal (2)" << endl;
    		cin >> choice;
         if(choice == 1){
-            double damage = Attack(characters[0]);
-            if(damage <= (characters[4].getHealth()/5)){
+            double damage = attack(*characters[0]);
+            if(damage <= (characters[4]->getHealth()/5)){
                 cout << "Your attack was ass! The dragon burned you!" << endl;
-                characters[0].damage(damage);
-                cout << "Your HP is " << characters[0].getHealth() << endl;
+                characters[0]->damage(damage);
+                cout << "Your HP is " << characters[0]->getHealth() << endl;
             }
             else{
                 cout << "Good shit! You just hit the dragon for " << damage << "HP!" << endl;
-                characters[4].damage(damage);
+                characters[4]->damage(damage);
             }
         }
         if(choice == 2){
-            characters[0].heal();
-            cout << "Your HP is " << characters[0].getHealth() << endl;
+            characters[0]->heal();
+            cout << "Your HP is " << characters[0]->getHealth() << endl;
         }
     }
-    if(characters[0].isAlive() == false){
+    if(characters[0]->isAlive() == false){
         cout << "You look back at the princess one last time and say goodbye" << endl;
         cout << "You then take final charge at the dragon but he grabs you by the tail and throws you past the horozion, YOU DIED" << endl;
         characters.clear();
         goto restart;
     }
-    if(characters[4].isAlive() == false){
+    if(characters[4]->isAlive() == false){
         cout << "In a moment of desperation you use DOMAIN EXPANSION and killed the dragon" << endl;
         cout << "The dragon has been slain and as it falls from the sky you turn around James Bond smile and smooch the princess" << endl;
         cout << "You take her out the lava lands and live hapily ever after" << endl;

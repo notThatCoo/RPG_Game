@@ -7,7 +7,7 @@ using namespace std;
 
 class Dwarf : public Character {
  public:
-    Dwarf(const string&, const string &, double , double, double, double, double, int);
+    Dwarf(Race, const string&, const string &, double , double, double, double, double, int);
 
     void heal() override;
 

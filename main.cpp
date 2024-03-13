@@ -40,7 +40,7 @@ int main() {
         if (cin.fail()) { throw runtime_error("Invalid input"); }
 
         if (startGame == 1) { gameplay(); }
-        
+
         else if (startGame == 2) { return 1; }
 
         else { throw runtime_error("Invalid input"); }

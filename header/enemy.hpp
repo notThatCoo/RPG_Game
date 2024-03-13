@@ -13,8 +13,6 @@ class Enemy : public Character {
 
     Enemy(const string &, double, int, double);
 
-    void attack(Character&);
-
 };
 
 #endif

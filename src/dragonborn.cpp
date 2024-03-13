@@ -4,23 +4,18 @@
 
 using namespace std;
 
-Dragonborn::Dragonborn(const string& name, const string& myClass, double health, double dexterity, double strength, double wisdom, double intelligence, int numHealing) 
+Dragonborn::Dragonborn(Race HeroRace, const string& name, const string& myClass, double health, double dexterity, double strength, double wisdom, double intelligence, int numHealing) 
     : Character(DRAGONBORN, name, myClass, health, dexterity, strength, wisdom, intelligence, numHealing) {
 }
 
-void Dragonborn::attack(Character &you, Character &opp) {
+double Dragonborn::attack(Character &player) {
 
-    attackStrength = getAttackStrength(you);
+    double attackStrenght =getAttackStrength(player);
 
     if (rand() % 2 == 1) { attackStrength += 10; }
 
     double damage = rand() % (attackStrength + 1);
     
-    opp.damage(damage);
+    return damage;
 
-}
-
-void Dragonborn::flee() {
-
-    cout << getStrength();
 }
