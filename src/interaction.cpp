@@ -72,6 +72,7 @@ void Interaction::gameplay(){
             else{
                 cout << "Good shit! You just hit the goblin for " << damage << "HP!" << endl;
                 characters[1]->damage(damage);
+                cout << characters[1]->getName() << "'s HP is " << characters[1]->getHealth() << endl;
             }
         }
         if(choice == 2){
@@ -127,6 +128,7 @@ void Interaction::gameplay(){
             else{
                 cout << "Good shit! You just hit the Wolf for " << damage << "HP!" << endl;
                 characters[2]->damage(damage);
+                cout << characters[2]->getName() << "'s HP is " << characters[2]->getHealth() << endl;
             }
         }
         if(choice == 2){
@@ -182,6 +184,7 @@ void Interaction::gameplay(){
             else{
                 cout << "Good shit! You just hit the spider for " << damage << "HP!" << endl;
                 characters[3]->damage(damage);
+                cout << characters[3]->getName() << "'s HP is " << characters[3]->getHealth() << endl;
             }
         }
         if(choice == 2){
@@ -241,6 +244,7 @@ void Interaction::gameplay(){
             else{
                 cout << "Good shit! You just hit the dragon for " << damage << "HP!" << endl;
                 characters[4]->damage(damage);
+                cout << characters[4]->getName() << "'s HP is " << characters[4]->getHealth() << endl;
             }
         }
         if(choice == 2){
