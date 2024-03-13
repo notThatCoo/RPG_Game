@@ -11,50 +11,76 @@
  > # Features
  > There will be two options when creating a character: Race and Class.  Each option has four suboptions (16 total combinations).  Both race and class have different benefits depending on the desired play style (for example, being a tank or swift damage dealer).  Initially, the user will be shown the four races and be prompted to choose one.  After they choose one, they will be prompted to choose a class.  Once they do both, the first stage is open.  Next comes the actual gameplay.  Our RPG will have turn-based gameplay and level progression.  During combat, the user will be prompted to perform one of many actions, such as attack, flee, heal, and check inventory.  There will be a grace period between every level where one can heal, look at their inventory, and "prepare" for the next level.  Also, after every level, the user will be given a random weapon or armor that improves their stats and one stat allocation point.  Said random weapon/armor will have increased benefits as one progresses through the game.  For non-stale gameplay, as well as adding an element of luck and strategy, attacks will damage in a set range.  Stats, weapons, and even armor can increase the maximum and/or minimum damage possible.  There won't be an ending to our game.  As you progress through the levels, you and your enemies will both get stronger.  Both strategy and luck will play a big part in progressing.  The goal of the game is to see how far you can get while trying out all the race and class combinations and seeing which one you like more.   
 
- > ## Phase II
- > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
- > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Break down the "Epics" into smaller actionable user stories (i.e. smaller development tasks). Convert them into issues and assign them to team members. Place these in the `TODO` column (aka Sprint Backlog).
- >   * These cards should represent roughly 7 days worth of development time for your team. Then, once the sprint is over you should be repeating these steps to plan a new sprint, taking you until your second scrum meeting with the reader in phase III.
- > * Schedule two check-ins using Calendly. Both time slots should be during your lab on week 6. Your entire team must be present for both check-ins.
- >   * The first check-in needs to be scheduled with your lab TA. During that meeting, you will discuss your project design/class diagram from phase II.
- >   * The second check-in should be scheduled with a reader. During that meeting you will discuss:
- >     * The tasks you are planning for the first sprint
- >     * How work will be divided between the team members
-## User Interface Specification
- > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from [this template](https://redirect.cs.umbc.edu/~mgrass2/cmsc345/Template_UI.doc))
 
 ### Navigation Diagram
-![CS100 final project](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/3d156cca-8f1f-4e43-9b68-a78160826cc4)
-> Draw a diagram illustrating how the user can navigate from one screen to another. Here is an [example](https://creately.com/diagram/example/ikfqudv82/user-navigation-diagram-classic?r=v). It can be useful to label each symbol that represents a screen so that you can reference the screens in the next section or the rest of the document if necessary. Give a brief description of what the diagram represents.
 
-### Screen Layouts
-> Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
+![jdksbck (1)](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/09044320-e759-43c9-bf20-34bf9842d2a1)
+
+>Navigation Diagram Description
+>For each iteration of “Arrived at opponent” the opponent will change and increase in difficulty. From iteration 0 to 3 the opponents will be goblin, wolf, giant snake and malevolent spider. On the 4th iteration the opponent is a dragon, this is the final boss and after successfully defeating the dragon the user beats the game.
+
 
 ## Class Diagram
-![RPG_Class](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/107754577/6c8bd054-2d66-427e-a78b-5997aaa14ac2)
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+
+![RPG_Class-Page-1](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/f16882d4-bd5b-465a-82c8-1709567bf8c2)
+
+
+
+
+Class Diagram Description:
+>Character class:
+
+>+Character(Hero Race, Hero Class, const string &, double ,double,double,double)
+	Creates character,
+>+HeroRace set stats(string c): void
+Takes in character Hero Race’s and class corresponding stats and computes 
+	Total character stats,
+>+get stats(): string 
+	Out put character’s name, current stats and level
+>+damage(double d):void
+	Compute health after taking damage, 
+>+attack():void
+	character attacks Attack
+>getRace():HeroRace
+	returns a hero's race
+>+isAlive(): bool
+	Returnings false if health is less than 1 and true otherwise
+>Human/Dwarf/Dragonborn/Elf Class:
+
+<RaceName>(Race, const string&, const string&, double, double,
+double, double, double, int)
+constructs a race class
+
+>+attackstrength(double, double, double,double): double
+takes in character's stats and computes total damage character will inflict when attacking,
+>+attack(character& ): void
+	Player attacks character passed in, 
+>+flee(): void
+	Character can attempt to flee a fight when it is their turn
+	Computes if character successfully flees a fight and flees if yes,
+>+checkinventory(): void
+	Outputs the contents of inventory, gives the user an option to equip item, and will change the character stats accordingly to item abilities, 
+ >+Level(double l): double
+ 	update character stats with corresponding level, return level
+>
+>
+>Opponent Class
+>
+>+set_attackstrength and +set_hitpoint will pass in user's level and determine difficulty of opponent
+>+isAlive():bool
+	returns if the opponent is alive
+>+damage(double d):void
+>Interaction class
+>
+>+sei_initiative determines who goes first
+>end_turn() will keep track of who's turn it currently is
+>won(character& ) will perform end of battle actions
+
  
- > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
- 
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
- >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
- > * Perform a new sprint plan like you did in Phase II.
- > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
- 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+ > ## SOLID principles in Class Diagram
+> The majority of the changes made to our class diagram were to satisfy the Single-responsibility principle, In both our character and race classes we had functions that would calculate a new stat and output the changes. We split up jobs into simpler functions that perform singular jobs. We also made sure our ISP was correct. Classes do not implement methods they don't use. The other change we made to satisfy the SOLID principles is adding the enemy class, without adding that class we would have to modify the character class in order to create an enemy, this satisfies the Open-Closed Principle. 
+> 
+
 
  
  > ## Final deliverable
