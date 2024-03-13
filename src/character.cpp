@@ -32,8 +32,8 @@ void Character::setStats(string c){
         strength += 1;
         wisdom -= 2;
     }
-
 }
+
 Race Character::getRace() const { return HeroRace; }
 
 const string &Character::getClass() const { return myClass; }
@@ -76,9 +76,10 @@ double Character::getIntelligence() const { return intelligence; }
 void Character::damage(double d) { health -= d; }
 
 bool Character::isAlive(){
-    
+
     if(health < 1){ return false; }
     else { return true; }
+  
 }
 
 void Character::heal() { 
@@ -90,5 +91,4 @@ void Character::heal() {
 
     }
     else { cout << "No healing items left" << endl; }
-
 }
