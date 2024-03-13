@@ -1,7 +1,8 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+project(RPG)
 
 ADD_EXECUTABLE(start_game
-    main.cpp
+    src/main.cpp
     src/interaction.cpp
     src/character.cpp
     src/human.cpp
@@ -10,8 +11,3 @@ ADD_EXECUTABLE(start_game
     src/dwarf.cpp
     src/enemy.cpp
 )
-
-ADD_SUBDIRECTORY(googletest)
-
-TARGET_LINK_LIBRARIES(test gtest)
-TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)

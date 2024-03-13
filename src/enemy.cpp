@@ -1,8 +1,6 @@
 #include "../header/enemy.hpp"
-#include <iostream>
-#include <cstdlib>
 
 using namespace std;
 
-Enemy::Enemy(const string& name, double health, int attackStrength, double maxHealth)
-    : Character(ENEMY, name, health, attackStrength, maxHealth) {}
+Enemy::Enemy(Race HeroRace, const string &name, double health, double maxHealth)
+    : Character(ENEMY, name, health, maxHealth) {}

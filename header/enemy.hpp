@@ -6,12 +6,9 @@
 using namespace std;
 
 class Enemy : public Character {
- private:
-  double maxHealth; 
-
  public:
 
-    Enemy(const string &, double, int, double);
+    Enemy(Race, const string &, double, double);
 
 };
 

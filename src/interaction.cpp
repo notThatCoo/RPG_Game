@@ -4,10 +4,8 @@
 #include "../header/interaction.hpp"
 
 void Interaction::gameplay(){
-    int seed;
-	cout << "Enter seed value: ";
-	cin >> seed;
-	cout << endl;
+
+    unsigned int seed = static_cast<unsigned int>(time(nullptr));
 	
 	srand(seed);
 
@@ -36,33 +34,37 @@ void Interaction::gameplay(){
         characters.push_back(new Human(HUMAN, name, myClass, 100,10,10,10,10,5));
     }
     else if(myRace == 2){
-        characters.push_back(new Elf(ELF, name, myClass, 100,10,10,10,10,10));
+        characters.push_back(new Elf(ELF, name, myClass, 80,13,6,12,11,5));
     }
     else if(myRace == 3){
-        characters.push_back(new Dragonborn(DRAGONBORN, name, myClass, 100,10,10,10,10,10));
+        characters.push_back(new Dragonborn(DRAGONBORN, name, myClass, 100,5,11,12,2,5));
     }
     else if(myRace == 4){
-       characters.push_back(new Dwarf(DWARF, name, myClass, 100,10,10,10,10,10));
+       characters.push_back(new Dwarf(DWARF, name, myClass, 130,5,13,11,8,10));
     }
     else { throw runtime_error("Incorrect input"); }
 
-    characters.push_back(new Enemy("Goblin",80,0,100));
-    characters.push_back(new Enemy("Wolf",120,0,150));
-    characters.push_back(new Enemy("Melovlent Spider",170,0,200));
-    characters.push_back(new Enemy("Falkor",200,0,250));
+    characters[0]->setStats(myClass);
+
+    characters.push_back(new Enemy(ENEMY, "Goblin", 80, 80));
+    characters.push_back(new Enemy(ENEMY, "Wolf", 120,120));
+    characters.push_back(new Enemy(ENEMY, "Melovlent Spider", 170,170));
+    characters.push_back(new Enemy(ENEMY, "Falkor", 250,250));
 
     cout << "You have spawned in Windsor Castle, gear up " << name << " and prepare to travel the plains in search for glory" << endl;
     cout << "You are traveling the plains and see a suspicious figure following you, he is hooded and you cannot tell his race" << endl;
     cout << "You hear footsteps behind you and instinctively turn around to dodge his dagger attack!" << endl;
     cout << "It's a goblin! Goblins always tend to prey on travelers, prepare for battle!" << endl;
+
     int choice;
 
     while(characters[0]->isAlive() && characters[1]->isAlive()){
         cout << "Will you attack (1), heal (2) or flee(3)" << endl;
+        cin.clear();
    		cin >> choice;
         if(choice == 1){
             double damage = attack(*characters[0]);
-            if(damage <= (characters[1]->getHealth()/5)){
+            if(damage <= (characters[1]->getMaxHealth()/5)){
                 cout << "Your attack was ass! The goblin dodged your attack and slashed you!" << endl;
                 characters[0]->damage(damage);
                 cout << "Your HP is " << characters[0]->getHealth() << endl;
@@ -117,7 +119,7 @@ void Interaction::gameplay(){
    		cin >> choice;
         if(choice == 1){
             double damage = attack(*characters[0]);
-            if(damage <= (characters[2]->getHealth()/5)){
+            if(damage <= (characters[2]->getMaxHealth()/5)){
                 cout << "Your attack was ass! The Wolf dodged your attack and bit you!" << endl;
                 characters[0]->damage(damage);
                 cout << "Your HP is " << characters[0]->getHealth() << endl;
@@ -172,7 +174,7 @@ void Interaction::gameplay(){
    		cin >> choice;
         if(choice == 1){
             double damage = attack(*characters[0]);
-            if(damage <= (characters[3]->getHealth()/5)){
+            if(damage <= (characters[3]->getMaxHealth()/5)){
                 cout << "Your attack was ass! The spider dodged your attack and hit you with its leg!" << endl;
                 characters[0]->damage(damage);
                 cout << "Your HP is " << characters[0]->getHealth() << endl;
@@ -231,7 +233,7 @@ void Interaction::gameplay(){
    		cin >> choice;
         if(choice == 1){
             double damage = attack(*characters[0]);
-            if(damage <= (characters[4]->getHealth()/5)){
+            if(damage <= (characters[4]->getMaxHealth()/5)){
                 cout << "Your attack was ass! The dragon burned you!" << endl;
                 characters[0]->damage(damage);
                 cout << "Your HP is " << characters[0]->getHealth() << endl;

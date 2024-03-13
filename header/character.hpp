@@ -12,7 +12,7 @@ class Character {
 	Race HeroRace;
   string name;
   string myClass;
-  double hearts;
+  double maxHealth;
 	double health;
 	double dexterity;
   double strength;
@@ -23,7 +23,7 @@ class Character {
 
  public:
  	Character(Race, const string &, const string &, double, double, double, double, double, int);
-  Character(Race, const string &, double, int, double);
+  Character(Race, const string &, double, double);
   Character();
 
  	void setStats(string);
@@ -43,6 +43,7 @@ class Character {
   double getWisdom() const;
   double getDexterity() const;
   double getIntelligence() const;
+  double getMaxHealth() const; 
 
  	void damage(double d);
  	bool isAlive();

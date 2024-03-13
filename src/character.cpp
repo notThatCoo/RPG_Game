@@ -5,6 +5,11 @@ using namespace std;
 Character::Character(Race HeroRace, const string &name, const string& myClass, double health, double dexterity, double strength, double wisdom, double intelligence, int numHealing)
 : HeroRace(HeroRace), name(name), myClass(myClass), health(health), dexterity(dexterity), strength(strength), wisdom(wisdom), intelligence(intelligence), numHealing(numHealing) {}
 
+Character::Character() {}
+
+Character::Character(Race HeroRace, const string &name, double health, double maxHealth)
+: HeroRace(HeroRace), name(name), health(health), maxHealth(maxHealth) {}
+
 void Character::setStats(string c){
     if (c == "Knight"){
         health += 20;
@@ -27,9 +32,9 @@ void Character::setStats(string c){
         intelligence +=3;
     }
     if(c== "Assassin"){
-        health -= 10;
+        health -= 20;
         dexterity += 2;
-        strength += 1;
+        strength += 2;
         wisdom -= 2;
     }
 }
@@ -82,6 +87,8 @@ double Character::getStrength() const { return strength; }
 double Character::getWisdom() const { return wisdom; }
 double Character::getDexterity() const { return dexterity; }
 double Character::getIntelligence() const { return intelligence; }
+
+double Character::getMaxHealth() const { return maxHealth; }
 
 void Character::damage(double d) { health -= d; }
 
