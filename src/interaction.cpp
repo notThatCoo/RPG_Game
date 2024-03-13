@@ -1,12 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "../header/character.hpp"
-#include "../header/human.hpp"
-#include "../header/dwarf.hpp"
-#include "../header/elf.hpp"
-#include "../header/dragonborn.hpp"
-#include "../header/enemy.hpp"
 #include "../header/interaction.hpp"
 
 void Interaction::gameplay(){
@@ -84,7 +78,8 @@ void Interaction::gameplay(){
         }
         if(choice == 3){
             if(myRace == 1){
-                characters[0]->setHealth(100); //NEED A SET HEALTH FUNCION!!!!!!
+                characters[0]->setHealthTo150(); 
+                cout << "Fragile Human's have a knack for running away. Youre health is set to 150." << endl;
             }
             cout << "You ran off from the goblin across the plains" << endl;
             break;
@@ -138,7 +133,8 @@ void Interaction::gameplay(){
         }
         if(choice == 3){
             if(myRace == 1){
-                characters[0]->setHealth(100); //NEED A SET HEALTH FUNCION!!!!!!
+                characters[0]->setHealthTo150(); 
+                cout << "Fragile Human's have a knack for running away. Youre health is set to 150." << endl;
             }
             cout << "You ran back into the hut and shut the door" << endl;
             break;
@@ -192,7 +188,8 @@ void Interaction::gameplay(){
         }
         if(choice == 3){
             if(myRace == 1){
-                characters[0]->setHealth(100); //NEED A SET HEALTH FUNCION!!!!!!
+                characters[0]->setHealthTo150(); 
+                cout << "Fragile Human's have a knack for running away. Youre health is set to 150." << endl;
             }
             cout << "You ran off from the spider barely makingit out by running into a nearby cave" << endl;
             break;
@@ -209,10 +206,10 @@ void Interaction::gameplay(){
         cin >> choice;
 
         if(choice == 1){
-        characters[0]->setIntellegence(1.5); //NEED A SET intellegence FUNCTION!!!!! 1.5 is the multiplier
+        characters[0]->setIntelligence(1.5); //NEED A SET intellegence FUNCTION!!!!! 1.5 is the multiplier
         }
         if(choice == 2){
-            characters[0]->setHealth(1.5); //NEED A SET HEALTH FUNCTION!!!!! 1.5 is the multiplier
+            characters[0]->setHealth(1.5); 
         }
     }
 

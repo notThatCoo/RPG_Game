@@ -25,9 +25,12 @@ class Character {
  	Character(Race, const string &, const string &, double, double, double, double, double, int);
   Character(Race, const string &, double, int, double);
 
- 	void setStats(string c);
-  void setHealth(double newHealth);
-  void setHealthToFull();
+ 	void setStats(string);
+  void setHealth(double);
+  void setHealthTo150();
+  void setStrength(double);
+  void setWisdom(double);
+  void setIntelligence(double);
 
   Race getRace() const;
   const string& getClass() const;

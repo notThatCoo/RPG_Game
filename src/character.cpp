@@ -7,7 +7,7 @@ Character::Character(Race HeroRace, const string &name, const string& myClass, d
 
 void Character::setStats(string c){
     if (c == "Knight"){
-        health += 2;
+        health += 20;
         dexterity -= 1;
         strength += 2;
         wisdom -= 4;
@@ -20,25 +20,29 @@ void Character::setStats(string c){
         intelligence -=3;
     }
     if(c== "Wizard"){
-        health -= 1;
+        health -= 10;
         dexterity -= 3;
         strength -= 2;
         wisdom += 3;
         intelligence +=3;
     }
     if(c== "Assassin"){
-        health -= 1;
+        health -= 10;
         dexterity += 2;
         strength += 1;
         wisdom -= 2;
     }
 }
 
-void Character::setHealthToFull() {
+void Character::setHealth(double newHealth) { health = health * newHealth; }
 
-    health = health;
+void Character::setHealthTo150() { health = 150; }
 
-}
+void Character::setStrength(double multiplier) { strength = strength * multiplier; }
+
+void Character::setWisdom(double multiplier) { wisdom = wisdom * multiplier; }
+
+void Character::setIntelligence(double multiplier) { intelligence = intelligence * multiplier; }
 
 Race Character::getRace() const { return HeroRace; }
 
@@ -78,8 +82,6 @@ double Character::getStrength() const { return strength; }
 double Character::getWisdom() const { return wisdom; }
 double Character::getDexterity() const { return dexterity; }
 double Character::getIntelligence() const { return intelligence; }
-
-int Character::getNumHealing() const { return numHealing; }
 
 void Character::damage(double d) { health -= d; }
 
