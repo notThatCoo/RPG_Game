@@ -1,4 +1,5 @@
 #include <iostream>
+#include "../header/interaction.hpp"
 
 using namespace std;
 
@@ -17,7 +18,7 @@ int main() {
 
     if (typeOfGame == 1) {
 
-        //Create new game
+        gameplay();
 
     }
     else if (typeOfGame == 2)    { 
@@ -38,8 +39,8 @@ int main() {
 
         if (cin.fail()) { throw runtime_error("Invalid input"); }
 
-        if (startGame == 1) { //Create a new game 
-        }
+        if (startGame == 1) { gameplay(); }
+        
         else if (startGame == 2) { return 1; }
 
         else { throw runtime_error("Invalid input"); }
