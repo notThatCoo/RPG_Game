@@ -14,6 +14,8 @@ class Interaction : public Character {
 
  public:
 
+    Interaction() {}
+
     void gameplay();
 
 };

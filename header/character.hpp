@@ -24,6 +24,7 @@ class Character {
  public:
  	Character(Race, const string &, const string &, double, double, double, double, double, int);
   Character(Race, const string &, double, int, double);
+  Character();
 
  	void setStats(string);
   void setHealth(double);

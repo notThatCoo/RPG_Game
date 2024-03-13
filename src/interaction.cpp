@@ -257,8 +257,4 @@ void Interaction::gameplay(){
         cout << "The dragon has been slain and as it falls from the sky you turn around James Bond smile and smooch the princess" << endl;
         cout << "You take her out the lava lands and live hapily ever after" << endl;
     }
-
 }
-    
-
-

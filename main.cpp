@@ -16,9 +16,11 @@ int main() {
 
     if (cin.fail()) { throw runtime_error("Invalid input"); }
 
+    Interaction interaction;
+
     if (typeOfGame == 1) {
 
-        gameplay();
+        interaction.gameplay();
 
     }
     else if (typeOfGame == 2)    { 
@@ -39,7 +41,7 @@ int main() {
 
         if (cin.fail()) { throw runtime_error("Invalid input"); }
 
-        if (startGame == 1) { gameplay(); }
+        if (startGame == 1) { interaction.gameplay(); }
 
         else if (startGame == 2) { return 1; }
 
