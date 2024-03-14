@@ -11,3 +11,9 @@ ADD_EXECUTABLE(start_game
     src/dwarf.cpp
     src/enemy.cpp
 )
+ADD_EXECUTABLE(test
+    test/charactertest.cpp
+)
+
+TARGET_LINK_LIBRARIES(test gtest)
+TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
