@@ -1,4 +1,6 @@
 #include "gtest/gtest.h"
+//#include "../src/interaction.cpp"
+#include "../src/main.cpp"
 #include "../src/human.cpp"
 #include "../src/enemy.cpp"
 #include "../src/elf.cpp"
@@ -10,28 +12,184 @@
 #include <vector>
 #include <iostream>
 #include <iomanip>
+//tests for Character set up 
 vector<Character*> characters;
-TEST(Charactertest, human_setup) {
+
+TEST(Charactertest, setup) {
     //vector<Character*> characters;
-    character *acharacter = new Human(HUMAN, "bob", "Knight", 100,10,10,10,10,5);
-    //characters.push_back(new Human(HUMAN, "bob", "Knight", 100,10,10,10,10,5));
-    EXPECT_NO_THROW(acharacters[0]->setStats("Kinght"));
+    characters.push_back(new Human(HUMAN, "Bob", "Kinght", 100,10,10,10,10,5));
+    characters.push_back(new Human(ELF, "fob", "Archer", 80,13,6,12,11,5));
+    characters.push_back(new Human(DRAGONBORN, "sob", "Wizard", 100,5,11,12,2,5));
+    characters.push_back(new Human(DWARF, "gob", "Assassin", 130,5,13,11,8,10));
+
+    EXPECT_NO_THROW(characters[0]->setStats("Kinght"));
+    EXPECT_NO_THROW(characters[1]->setStats("Wizard"));
+    EXPECT_NO_THROW(characters[2]->setStats("Archer"));
+    EXPECT_NO_THROW(characters[3]->setStats("Assassin"));
+
+}
+TEST(Charactertest, set_get_health) {
+    characters[0]->setHealth(1.5);
+    characters[1]->setHealth(1.5);
+    characters[2]->setHealth(1.5);
+    characters[3]->setHealth(1.5);
+    EXPECT_EQ(characters[0]->getHealth(), 180); //human, Kight 100+20*1.5
+    EXPECT_EQ(characters[1]->getHealth(), 120); //elf, Archer 80 *1.5
+    EXPECT_EQ(characters[2]->getHealth(), 135); //dragonborn, Wizard  100-10*1.5
+    EXPECT_EQ(characters[3]->getHealth(), 165 ); //dwarf, Assassin 130-20* 1.5
+
+ 
 }
 
-TEST(Charactertest, elf_setup) {
-   //vector<Character*> characters;
-    characters.push_back(new Elf(ELF, "bob", "Knight", 80,13,6,12,11,5));
-    EXPECT_NO_THROW(characters[1]->setStats("Kinght"));
+TEST(Charactertest, sethealth150) {
+    EXPECT_NO_THROW(characters[0]->setHealthTo150());
+    EXPECT_NO_THROW(characters[1]->setHealthTo150());
+    EXPECT_NO_THROW(characters[2]->setHealthTo150());
+    EXPECT_NO_THROW(characters[3]->setHealthTo150());
+
+    EXPECT_EQ(characters[0]->getHealth(), 150); //human, Kight 
+    EXPECT_EQ(characters[1]->getHealth(), 150); //elf, Archer
+    EXPECT_EQ(characters[2]->getHealth(), 150); //dragonborn, Wizard
+    EXPECT_EQ(characters[3]->getHealth(), 150 ); //dwarf, Assassin
 }
 
-TEST(Charactertest, dwarf_setup) {
-    //vector<Character*> characters;
-    characters.push_back(new Dwarf(DWARF, "bob", "Knight", 130,5,13,11,8,10));
-    EXPECT_NO_THROW(characters[2]->setStats("Kinght"));
+TEST(Charactertest, set_getstrength) {
+    EXPECT_NO_THROW(characters[0]->setStrength(1.5));
+    EXPECT_NO_THROW(characters[1]->setStrength(1.5));
+    EXPECT_NO_THROW(characters[2]->setStrength(1.5));
+    EXPECT_NO_THROW(characters[3]->setStrength(1.5));
+
+    EXPECT_EQ(characters[0]->getStrength(), 18 ); //human, Kight = 10+2 *1.5
+    EXPECT_EQ(characters[1]->getStrength(), 6); //elf, Archer= 6-2 *1.5
+    EXPECT_DOUBLE_EQ (characters[2]->getStrength(), 13.5); //dragonborn, Wizard = 11-2 * 1.5
+    EXPECT_DOUBLE_EQ(characters[3]->getStrength(), 22.5); //dwarf, Assassin = 13 + 2 * 1.5
+
+
 }
 
-TEST(Charactertest, dragonborn_setup) {
-    //vector<Character*> characters;
-    characters.push_back(new Dragonborn(DRAGONBORN, "bob", "Knight", 100,5,11,12,2,5));
-    EXPECT_NO_THROW(characters[3]->setStats("Kinght"));
+TEST(Charactertest, set_getWisdom) {
+    EXPECT_NO_THROW(characters[0]->setWisdom(1.5));
+    EXPECT_NO_THROW(characters[1]->setWisdom(1.5));
+    EXPECT_NO_THROW(characters[2]->setWisdom(1.5));
+    EXPECT_NO_THROW(characters[3]->setWisdom(1.5));
+
+    EXPECT_EQ(characters[0]->getWisdom(), 9); //human, Kight = 10-4 *1.5
+    EXPECT_EQ(characters[1]->getWisdom(), 21); //elf, Archer= 12+2 *1.5
+    EXPECT_DOUBLE_EQ (characters[2]->getWisdom(), 22.5); //dragonborn, Wizard = 12+3 * 1.5
+    EXPECT_DOUBLE_EQ(characters[3]->getWisdom(), 13.5); //dwarf, Assassin = 11 - 2 * 1.5
+
+}
+
+
+TEST(Charactertest, set_getIntelligence) {
+    EXPECT_NO_THROW(characters[0]->setIntelligence(1.5));
+    EXPECT_NO_THROW(characters[1]->setIntelligence(1.5));
+    EXPECT_NO_THROW(characters[2]->setIntelligence(1.5));
+    EXPECT_NO_THROW(characters[3]->setIntelligence(1.5));
+
+
+    EXPECT_DOUBLE_EQ(characters[0]->getIntelligence(), 16.5); //human, Kight = 10+1 *1.5
+    EXPECT_EQ(characters[1]->getIntelligence(), 12); //elf, Archer= 11-3 *1.5
+    EXPECT_DOUBLE_EQ (characters[2]->getIntelligence(), 7.5); //dragonborn, Wizard =  2+3* 1.5
+    EXPECT_DOUBLE_EQ(characters[3]->getIntelligence(), 12); //dwarf, Assassin =  8* 1.5
+
+
+}
+TEST(Charactertest, getDex) {
+    EXPECT_EQ(characters[0]->getDexterity(), 9); //10-1
+    EXPECT_EQ(characters[1]->getDexterity(), 16);//13+3
+    EXPECT_EQ(characters[2]->getDexterity(), 2); //5-3
+    EXPECT_EQ(characters[3]->getDexterity(), 7); //5+2
+}
+TEST(Charactertest, getRace) {
+    EXPECT_EQ(characters[0]->getRace(), HUMAN);
+    EXPECT_EQ(characters[1]->getRace(), ELF);
+    EXPECT_EQ(characters[2]->getRace(), DRAGONBORN);
+    EXPECT_EQ(characters[3]->getRace(), DWARF);
+}
+
+TEST(Charactertest, getclass) {
+    EXPECT_EQ(characters[0]->getClass(), "Kinght");
+    EXPECT_EQ(characters[1]->getClass(), "Archer");
+    EXPECT_EQ(characters[2]->getClass(), "Wizard");
+    EXPECT_EQ(characters[3]->getClass(), "Assassin");
+}
+
+TEST(Charactertest, getName) {
+    EXPECT_EQ(characters[0]->getName(), "Bob");
+    EXPECT_EQ(characters[1]->getName(), "fob");
+    EXPECT_EQ(characters[2]->getName(), "sob");
+    EXPECT_EQ(characters[3]->getName(), "gob");
+}
+
+
+
+
+
+TEST(Charactertest, getNumHealing) { // at this point no healing done therfore numhealthing = 5
+    EXPECT_EQ(characters[0]->getNumHealing(), 5);
+    EXPECT_EQ(characters[0]->getNumHealing(), 5);
+    EXPECT_EQ(characters[0]->getNumHealing(), 5);
+    EXPECT_EQ(characters[0]->getNumHealing(), 5);
+
+}
+//////////
+// TEST(Charactertest, human_getAttackStrength) {
+
+//     EXPECT_DOUBLE_EQ(getAttackStrength(characters[0]), 87); //human, Kight = (18+16.5*2)+(9+9))
+//     EXPECT_EQ(getAttackStrength(characters[1]), 92); //elf, Archer= (6+12)1+(16+21)2
+//     EXPECT_DOUBLE_EQ (getAttackStrength(characters[2]), 75.5); //dragonborn, Wizard =  (7.5+22.5)2+(13.5+2)1
+//     EXPECT_DOUBLE_EQ(getAttackStrength(characters[3]), 84.5); //dwarf, Assassin =  (7+22.5)2+(13.5+12)1
+ 
+// }
+
+TEST(Charactertest, take_damage ) {
+    characters[0]->damage(10);
+    characters[0]->damage(10);
+    characters[0]->damage(135);
+    characters[0]->damage(165);
+    
+    EXPECT_EQ(characters[0]->getHealth(), 170);
+    EXPECT_EQ(characters[1]->getHealth(), 110);
+    EXPECT_EQ(characters[2]->getHealth(), 0);
+    EXPECT_EQ(characters[3]->getHealth(), 0);
+}
+
+TEST(Charactertest, isAlive) {  // at this point two false, critical damage has been done ^
+    EXPECT_EQ(characters[0]->isAlive(), true);
+    EXPECT_EQ(characters[1]->isAlive(), true);
+    EXPECT_EQ(characters[2]->isAlive(), false);
+    EXPECT_EQ(characters[3]->isAlive(), false);
+}
+// character will use all healling items, try agian and return cout << "No healing items left" << endl
+
+
+TEST(Charactertest, heal ) {
+    EXPECT_NO_THROW(characters[3]->heal());
+    EXPECT_NO_THROW(characters[3]->heal());
+    EXPECT_NO_THROW(characters[3]->heal());
+    EXPECT_NO_THROW(characters[3]->heal());
+    EXPECT_NO_THROW(characters[3]->heal());
+
+    EXPECT_EQ(characters[3]->heal(), "No healing items left");
+}
+
+TEST(Charactertest, attack ) {
+    EXPECT_NO_THROW(attack(*characters[0]));
+    EXPECT_NO_THROW(attack(*characters[1]));
+    EXPECT_NO_THROW(attack(*characters[2]));
+    EXPECT_NO_THROW(attack(*characters[3]));
+}
+
+
+    characters.push_back(new Enemy(ENEMY, "Goblin", 80, 80));
+    characters.push_back(new Enemy(ENEMY, "Wolf", 120,120));
+    characters.push_back(new Enemy(ENEMY, "Melovlent Spider", 170,170));
+    characters.push_back(new Enemy(ENEMY, "Falkor", 250,250))
+
+TEST(enemy_test, enemy_maxHealth ) {
+    EXPECT_EQ(characters[4]->getMaxHealth(), 80);
+    EXPECT_EQ(characters[5]->getMaxHealth(), 120);
+    EXPECT_EQ(characters[6]->getMaxHealth(), 170);
+    EXPECT_EQ(characters[7]->getMaxHealth(), 250);
 }
