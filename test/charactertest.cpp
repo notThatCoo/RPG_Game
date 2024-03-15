@@ -145,7 +145,7 @@ TEST(Charactertest, getNumHealing) { // at this point no healing done therfore n
 //     EXPECT_NO_THROW(attack(*acharacters[3]));
 // }
 
-TEST(Charactertest, take_damage ) {
+TEST(Charactertest, take_damage ) { // character takes damage 
     acharacters[0]->damage(10);
     acharacters[1]->damage(10);
     acharacters[2]->damage(150);
@@ -173,6 +173,7 @@ TEST(Charactertest, heal) {
     EXPECT_NO_THROW(acharacters[3]->heal());
     EXPECT_NO_THROW(acharacters[3]->heal());
 }
+
 
 TEST(enemy_test, enemy_maxHealth ) {
     acharacters.push_back(new Enemy(ENEMY, "Goblin", 80, 80));
