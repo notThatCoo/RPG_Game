@@ -67,7 +67,14 @@ void Interaction::gameplay(){
             if(damage <= (characters[1]->getMaxHealth()/5)){
                 cout << "Your attack was ass! The goblin dodged your attack and slashed you!" << endl;
                 characters[0]->damage(damage);
-                cout << "Your HP is " << characters[0]->getHealth() << endl;
+                if (characters[0]->getHealth() <= 0)
+                {
+                    cout << characters[0]->getName() << "'s HP is 0\n";
+                }
+                else 
+                {
+                    cout << "Your HP is " << characters[0]->getHealth() << endl;
+                }
             }
             else{
                 cout << "Good shit! You just hit the goblin for " << damage << "HP!" << endl;
@@ -130,7 +137,15 @@ void Interaction::gameplay(){
             if(damage <= (characters[2]->getMaxHealth()/5)){
                 cout << "Your attack was ass! The Wolf dodged your attack and bit you!" << endl;
                 characters[0]->damage(damage);
-                cout << "Your HP is " << characters[0]->getHealth() << endl;
+
+                if (characters[0]->getHealth() <= 0)
+                {
+                    cout << characters[0]->getName() << "'s HP is 0\n";
+                }
+                else 
+                {
+                    cout << "Your HP is " << characters[0]->getHealth() << endl;
+                }
             }
             else{
                 cout << "Good shit! You just hit the Wolf for " << damage << "HP!" << endl;
@@ -193,7 +208,14 @@ void Interaction::gameplay(){
             if(damage <= (characters[3]->getMaxHealth()/5)){
                 cout << "Your attack was ass! The spider dodged your attack and hit you with its leg!" << endl;
                 characters[0]->damage(damage);
-                cout << "Your HP is " << characters[0]->getHealth() << endl;
+                if (characters[0]->getHealth() <= 0)
+                {
+                    cout << characters[0]->getName() << "'s HP is 0\n";
+                }
+                else 
+                {
+                    cout << "Your HP is " << characters[0]->getHealth() << endl;
+                }
             }
             else{
                 cout << "Good shit! You just hit the spider for " << damage << "HP!" << endl;

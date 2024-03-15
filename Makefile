@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /class/classes/tadel002/final-project-lguzm044_schav088_tadel002_habdu016
+CMAKE_SOURCE_DIR = /class/classes/lguzm044/final-project-lguzm044_schav088_tadel002_habdu016
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /class/classes/tadel002/final-project-lguzm044_schav088_tadel002_habdu016
+CMAKE_BINARY_DIR = /class/classes/lguzm044/final-project-lguzm044_schav088_tadel002_habdu016
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /class/classes/tadel002/final-project-lguzm044_schav088_tadel002_habdu016/CMakeFiles /class/classes/tadel002/final-project-lguzm044_schav088_tadel002_habdu016//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /class/classes/lguzm044/final-project-lguzm044_schav088_tadel002_habdu016/CMakeFiles /class/classes/lguzm044/final-project-lguzm044_schav088_tadel002_habdu016//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /class/classes/tadel002/final-project-lguzm044_schav088_tadel002_habdu016/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /class/classes/lguzm044/final-project-lguzm044_schav088_tadel002_habdu016/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -513,4 +513,3 @@ help:
 cmake_check_build_system:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
-
