@@ -175,7 +175,7 @@ TEST(Charactertest, heal) {
 }
 
 
-TEST(enemy_test, enemy_maxHealth ) {
+TEST(enemy_test, enemy_maxHealth ) {// ensures enemy's max health is correct
     acharacters.push_back(new Enemy(ENEMY, "Goblin", 80, 80));
     acharacters.push_back(new Enemy(ENEMY, "Wolf", 120,120));
     acharacters.push_back(new Enemy(ENEMY, "Melovlent Spider", 170,170));
