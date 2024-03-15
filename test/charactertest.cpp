@@ -2,7 +2,7 @@
 #include "gtest/gtest.h"
 #include "../src/interaction.cpp"
 #include "../header/interaction.hpp"
-#include "../src/main.cpp"
+//#include "../src/main.cpp"
 #include "../src/human.cpp"
 #include "../header/human.hpp"
 #include "../src/enemy.cpp"
@@ -203,4 +203,9 @@ TEST(enemy_test, enemy_maxHealth ) {
     EXPECT_EQ(acharacters[5]->getMaxHealth(), 120);
     EXPECT_EQ(acharacters[6]->getMaxHealth(), 170);
     EXPECT_EQ(acharacters[7]->getMaxHealth(), 250);
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
