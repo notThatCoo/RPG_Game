@@ -2,7 +2,6 @@
 #include "gtest/gtest.h"
 #include "../src/interaction.cpp"
 #include "../header/interaction.hpp"
-//#include "../src/main.cpp"
 #include "../src/human.cpp"
 #include "../header/human.hpp"
 #include "../src/enemy.cpp"
@@ -26,14 +25,14 @@ vector<Character*> acharacters;
 
 TEST(Charactertest, setup) {
     //vector<Character*> characters;
-    acharacters.push_back(new Human(HUMAN, "Bob", "Kinght", 100,10,10,10,10,5));
-    acharacters.push_back(new Human(ELF, "fob", "Archer", 80,13,6,12,11,5));
-    acharacters.push_back(new Human(DRAGONBORN, "sob", "Wizard", 100,5,11,12,2,5));
-    acharacters.push_back(new Human(DWARF, "gob", "Assassin", 130,5,13,11,8,10));
+    acharacters.push_back(new Human(HUMAN, "Bob", "Knight", 100,10,10,10,10,5));
+    acharacters.push_back(new Elf(ELF, "fob", "Archer", 80,13,6,12,11,5));
+    acharacters.push_back(new Dragonborn(DRAGONBORN, "sob", "Wizard", 100,5,11,12,2,5));
+    acharacters.push_back(new Dwarf(DWARF, "gob", "Assassin", 130,5,13,11,8,10));
 
-    EXPECT_NO_THROW(acharacters[0]->setStats("Kinght"));
-    EXPECT_NO_THROW(acharacters[1]->setStats("Wizard"));
-    EXPECT_NO_THROW(acharacters[2]->setStats("Archer"));
+    EXPECT_NO_THROW(acharacters[0]->setStats("Knight"));
+    EXPECT_NO_THROW(acharacters[1]->setStats("Archer"));
+    EXPECT_NO_THROW(acharacters[2]->setStats("Wizard"));
     EXPECT_NO_THROW(acharacters[3]->setStats("Assassin"));
 
 }
@@ -118,7 +117,7 @@ TEST(Charactertest, getRace) {
 }
 
 TEST(Charactertest, getclass) {
-    EXPECT_EQ(acharacters[0]->getClass(), "Kinght");
+    EXPECT_EQ(acharacters[0]->getClass(), "Knight");
     EXPECT_EQ(acharacters[1]->getClass(), "Archer");
     EXPECT_EQ(acharacters[2]->getClass(), "Wizard");
     EXPECT_EQ(acharacters[3]->getClass(), "Assassin");
@@ -131,10 +130,6 @@ TEST(Charactertest, getName) {
     EXPECT_EQ(acharacters[3]->getName(), "gob");
 }
 
-
-
-
-
 TEST(Charactertest, getNumHealing) { // at this point no healing done therfore numhealthing = 5
     EXPECT_EQ(acharacters[0]->getNumHealing(), 5);
     EXPECT_EQ(acharacters[0]->getNumHealing(), 5);
@@ -142,24 +137,22 @@ TEST(Charactertest, getNumHealing) { // at this point no healing done therfore n
     EXPECT_EQ(acharacters[0]->getNumHealing(), 5);
 
 }
-//////////
-// TEST(Charactertest, human_getAttackStrength) {
 
-//     EXPECT_DOUBLE_EQ(getAttackStrength(characters[0]), 87); //human, Kight = (18+16.5*2)+(9+9))
-//     EXPECT_EQ(getAttackStrength(characters[1]), 92); //elf, Archer= (6+12)1+(16+21)2
-//     EXPECT_DOUBLE_EQ (getAttackStrength(characters[2]), 75.5); //dragonborn, Wizard =  (7.5+22.5)2+(13.5+2)1
-//     EXPECT_DOUBLE_EQ(getAttackStrength(characters[3]), 84.5); //dwarf, Assassin =  (7+22.5)2+(13.5+12)1
- 
+// TEST(Charactertest, attack) {
+//     EXPECT_NO_THROW(attack(*acharacters[0]));
+//     EXPECT_NO_THROW(attack(*acharacters[1]));
+//     EXPECT_NO_THROW(attack(*acharacters[2]));
+//     EXPECT_NO_THROW(attack(*acharacters[3]));
 // }
 
 TEST(Charactertest, take_damage ) {
     acharacters[0]->damage(10);
-    acharacters[0]->damage(10);
-    acharacters[0]->damage(135);
-    acharacters[0]->damage(165);
+    acharacters[1]->damage(10);
+    acharacters[2]->damage(150);
+    acharacters[3]->damage(150);
     
-    EXPECT_EQ(acharacters[0]->getHealth(), 170);
-    EXPECT_EQ(acharacters[1]->getHealth(), 110);
+    EXPECT_EQ(acharacters[0]->getHealth(), 140);
+    EXPECT_EQ(acharacters[1]->getHealth(), 140);
     EXPECT_EQ(acharacters[2]->getHealth(), 0);
     EXPECT_EQ(acharacters[3]->getHealth(), 0);
 }
@@ -173,25 +166,13 @@ TEST(Charactertest, isAlive) {  // at this point two false, critical damage has 
 // character will use all healling items, try agian and return cout << "No healing items left" << endl
 
 
-TEST(Charactertest, heal ) {
+TEST(Charactertest, heal) {
     EXPECT_NO_THROW(acharacters[3]->heal());
     EXPECT_NO_THROW(acharacters[3]->heal());
     EXPECT_NO_THROW(acharacters[3]->heal());
     EXPECT_NO_THROW(acharacters[3]->heal());
     EXPECT_NO_THROW(acharacters[3]->heal());
-
-    // EXPECT_EQ(characters[3]->heal(), "No healing items left"); need this to check charachter.cpp line 117
 }
-
-// TEST(Charactertest, attack) {
-//     EXPECT_NO_THROW(attack(*characters[0]));
-//     EXPECT_NO_THROW(attack(*characters[1]));
-//     EXPECT_NO_THROW(attack(*characters[2]));
-//     EXPECT_NO_THROW(attack(*characters[3]));
-// }
-
-
-
 
 TEST(enemy_test, enemy_maxHealth ) {
     acharacters.push_back(new Enemy(ENEMY, "Goblin", 80, 80));
