@@ -8,6 +8,8 @@
 #include "../header/dragonborn.hpp"
 #include "../header/elf.hpp"
 
+#pragma once
+
 using namespace std;
 
 class Interaction : public Character {

@@ -13,9 +13,9 @@ ADD_EXECUTABLE(start_game
     src/enemy.cpp
 )
 
-ADD_EXECUTABLE(charactertest
+ADD_EXECUTABLE(character_test
     test/charactertest.cpp
 )
 
-TARGET_LINK_LIBRARIES(charactertest gtest)
-TARGET_COMPILE_DEFINITIONS(charactertest PRIVATE gtest_disable_pthreads=ON)
+TARGET_LINK_LIBRARIES(character_test gtest)
+TARGET_COMPILE_DEFINITIONS(character_test PRIVATE gtest_disable_pthreads=ON)

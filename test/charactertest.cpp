@@ -1,13 +1,20 @@
 
 #include "gtest/gtest.h"
 #include "../src/interaction.cpp"
+#include "../header/interaction.hpp"
 #include "../src/main.cpp"
 #include "../src/human.cpp"
+#include "../header/human.hpp"
 #include "../src/enemy.cpp"
+#include "../header/enemy.hpp"
 #include "../src/elf.cpp"
+#include "../header/elf.hpp"
 #include "../src/dwarf.cpp"
+#include "../header/dwarf.hpp"
 #include "../src/dragonborn.cpp"
+#include "../header/dragonborn.hpp"
 #include "../src/character.cpp"
+#include "../header/character.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
