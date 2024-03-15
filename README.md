@@ -90,9 +90,14 @@ takes in character's stats and computes total damage character will inflict when
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ > file:///C:/Users/PC/Downloads/More_inputs_&_outputs.pdf
+> This is the initial output and the subsequent output if you continue to choose option 1, done by pressing 1 on your keyboard, to: start the game, choose a character of race human and class knight. As you can see, there is another output that asks you to enter your name. This takes a string input. Finally in this screenshot, there is an option to either attack, heal, or flee when faced with an enemy. If you choose to heal, your health goes up. Fleeing ends the encounter and takes you to the next enemy. 
  ## Installation/Usage
+ 
  > Instructions on installing and running your application
+> All necessary files for this application are split amongst the src folder, header folder, and CmakeList.txt file. The src and header folders contain files that make the interface of the game possible. The CMakeLists text file contain the executable to start the game. To run the game you need a working terminal that is compatible with C++ functionality. 
+
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+>We used google test to test our project. We started by testing the constructors for the character class and the subclasses, ensuring the variables have the correct values. Next we tested the functions of these classes that alter the value of these variables using asserts to ensure they are being updated correctly. 
  
