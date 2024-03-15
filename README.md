@@ -90,7 +90,8 @@ takes in character's stats and computes total damage character will inflict when
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > file:///C:/Users/PC/Downloads/More_inputs_&_outputs.pdf
+ >![Much_input_ _output](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/107754577/1ab7a528-e6d6-4381-bb47-89b9f8424e3b)
+
 > This is the initial output and the subsequent output if you continue to choose option 1, done by pressing 1 on your keyboard, to: start the game, choose a character of race human and class knight. As you can see, there is another output that asks you to enter your name. This takes a string input. Finally in this screenshot, there is an option to either attack, heal, or flee when faced with an enemy. If you choose to heal, your health goes up. Fleeing ends the encounter and takes you to the next enemy. 
  ## Installation/Usage
  
