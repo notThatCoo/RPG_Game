@@ -22,7 +22,8 @@
 
 ## Class Diagram
 
-![RPG_Class-Page-1](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/f16882d4-bd5b-465a-82c8-1709567bf8c2)
+![RPG_Class-Page-1](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/107754577/d17e8e13-d8ba-4e03-9d1c-970d06f82c67)
+
 
 Class Diagram Description:
 >Character class:
