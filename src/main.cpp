@@ -49,7 +49,7 @@ int main() {
 
     }
     else { throw runtime_error("Invalid input"); }
-
+    
     return 1;
 }
 

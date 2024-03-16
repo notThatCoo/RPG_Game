@@ -98,6 +98,9 @@ void Interaction::gameplay(){
     if(characters[0]->isAlive() == false){
         cout << "The goblin has slained you pathethic mortal, YOU DIED" << endl;
         characters.clear();
+
+        for (unsigned int i = 0; i < 5; ++i) { delete characters[i]; }
+        
         goto restart;
     }
     if(characters[1]->isAlive() == false){
@@ -161,6 +164,9 @@ void Interaction::gameplay(){
     if(characters[0]->isAlive() == false){
         cout << "The Wolf pounced on top of you and mauled your head off, YOU DIED" << endl;
         characters.clear();
+
+        for (unsigned int i = 0; i < 5; ++i) { delete characters[i]; }
+
         goto restart;
     }
     if(characters[2]->isAlive() == false){
@@ -224,6 +230,9 @@ void Interaction::gameplay(){
     if(characters[0]->isAlive() == false){
         cout << "The grabbed you by its leg and wrapped you up before devouring you, YOU DIED" << endl;
         characters.clear();
+
+        for (unsigned int i = 0; i < 5; ++i) { delete characters[i]; }
+
         goto restart;
     }
     if(characters[3]->isAlive() == false){
@@ -284,11 +293,16 @@ void Interaction::gameplay(){
         cout << "You look back at the princess one last time and say goodbye" << endl;
         cout << "You then take final charge at the dragon but he grabs you by the tail and throws you past the horozion, YOU DIED" << endl;
         characters.clear();
+
+        for (unsigned int i = 0; i < 5; ++i) { delete characters[i]; }
+
         goto restart;
     }
     if(characters[4]->isAlive() == false){
         cout << "In a moment of desperation you use DOMAIN EXPANSION and killed the dragon" << endl;
         cout << "The dragon has been slain and as it falls from the sky you turn around James Bond smile and smooch the princess" << endl;
         cout << "You take her out the lava lands and live hapily ever after" << endl;
+
+        for (unsigned int i = 0; i < 5; ++i) { delete characters[i]; }
     }
 }
