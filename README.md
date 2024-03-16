@@ -9,8 +9,7 @@
  > # Input
  > The first instance of input and output is creating a game.  You can either pick a new game or a saved game.  Next is the character creation.  You'll input the race and class of the character you want.  The game will then output what's happening, including your level, the health of yourself and the enemy, and more when prompted.
  > # Features
- > There will be two options when creating a character: Race and Class.  Each option has four suboptions (16 total combinations).  Both race and class have different benefits depending on the desired play style (for example, being a tank or swift damage dealer).  Initially, the user will be shown the four races and be prompted to choose one.  After they choose one, they will be prompted to choose a class.  Once they do both, the first stage is open.  Next comes the actual gameplay.  Our RPG will have turn-based gameplay and level progression.  During combat, the user will be prompted to perform one of many actions, such as attack, flee, heal, and check inventory.  There will be a grace period between every level where one can heal, look at their inventory, and "prepare" for the next level.  Also, after every level, the user will be given a random weapon or armor that improves their stats and one stat allocation point.  Said random weapon/armor will have increased benefits as one progresses through the game.  For non-stale gameplay, as well as adding an element of luck and strategy, attacks will damage in a set range.  Stats, weapons, and even armor can increase the maximum and/or minimum damage possible.  There won't be an ending to our game.  As you progress through the levels, you and your enemies will both get stronger.  Both strategy and luck will play a big part in progressing.  The goal of the game is to see how far you can get while trying out all the race and class combinations and seeing which one you like more.   
-
+ > There will be two options when creating a character: Race and Class.  Each option has four suboptions (16 total combinations).  Both race and class have different benefits depending on the desired play style (for example, being a tank or swift damage dealer).  Initially, the user will be shown the four races and be prompted to choose one.  After they choose one, they will be prompted to choose a class.  Once they do both, the first stage is open.  Next comes the actual gameplay.  Our RPG will have turn-based gameplay.  During combat, the user will be prompted to perform one of many actions, such as attack, flee, and heal.  After defeating an enemy, you can upgrade one of our stats or your health.  For non-stale gameplay, as well as adding an element of luck and strategy, attacks will damage in a set range.  Stats can increase the maximum and/or minimum damage possible.  As you progress, you and your enemies will both get stronger.  Both strategy and luck will play a big part in progressing.  The goal of the game is to beat the boss.
 
 ### Navigation Diagram
 
@@ -79,15 +78,6 @@ takes in character's stats and computes total damage character will inflict when
  > ## SOLID principles in Class Diagram
 > The majority of the changes made to our class diagram were to satisfy the Single-responsibility principle, In both our character and race classes we had functions that would calculate a new stat and output the changes. We split up jobs into simpler functions that perform singular jobs. We also made sure our ISP was correct. Classes do not implement methods they don't use. The other change we made to satisfy the SOLID principles is adding the enemy class, without adding that class we would have to modify the character class in order to create an enemy, this satisfies the Open-Closed Principle. 
 > 
-
-
- 
- > ## Final deliverable
- > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
- > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
  >![Much_input_ _output](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/107754577/1ab7a528-e6d6-4381-bb47-89b9f8424e3b)
