@@ -83,7 +83,12 @@ takes in character's stats and computes total damage character will inflict when
  ## Screenshots
  >![Much_input_ _output](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/107754577/1ab7a528-e6d6-4381-bb47-89b9f8424e3b)
 
-> This is the initial output and the subsequent output if you continue to choose option 1, done by pressing 1 on your keyboard, to: start the game, choose a character of race human and class knight. As you can see, there is another output that asks you to enter your name. This takes a string input. Finally in this screenshot, there is an option to either attack, heal, or flee when faced with an enemy. If you choose to heal, your health goes up. Fleeing ends the encounter and takes you to the next enemy. 
+> This is the initial output and the subsequent output if you continue to choose option 1, done by pressing 1 on your keyboard, to: start the game, choose a character of race human and class knight. As you can see, there is another output that asks you to enter your name. This takes a string input. Finally in this screenshot, there is an option to either attack, heal, or flee when faced with an enemy. If you choose to heal, your health goes up. Fleeing ends the encounter and takes you to the next enemy.
+
+> <img width="669" alt="Screen Shot 2024-03-15 at 5 38 43 PM" src="https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/149119460/54d06395-f454-4823-81a4-acbc423eb994">
+
+> This is our short about the game section
+
  ## Installation/Usage
  
  > Instructions on installing and running your application
