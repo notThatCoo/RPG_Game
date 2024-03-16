@@ -13,7 +13,7 @@
 
 ### Navigation Diagram
 
-![RPG_Class-Page-1 (1)](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/7cf45861-7d7a-42c7-bcf7-357f6257f1fe)
+![jdksbck (2)](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/a1a57af8-097c-434b-bcb3-d3ef336ac399)
 
 
 
@@ -23,8 +23,7 @@
 
 ## Class Diagram
 
-![RPG_Class-Page-1](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/107754577/d17e8e13-d8ba-4e03-9d1c-970d06f82c67)
-
+![RPG_Class-Page-1 (1)](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/7cf45861-7d7a-42c7-bcf7-357f6257f1fe)
 
 Class Diagram Description:
 >Character class:
