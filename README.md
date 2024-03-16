@@ -13,7 +13,8 @@
 
 ### Navigation Diagram
 
-![jdksbck (2)](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/0f6dc5bf-e7cb-46c8-89ac-6f976ebb1131)
+![RPG_Class-Page-1 (1)](https://github.com/cs100/final-project-lguzm044_schav088_tadel002_habdu016/assets/156245649/7cf45861-7d7a-42c7-bcf7-357f6257f1fe)
+
 
 
 >Navigation Diagram Description
